@@ -1,0 +1,137 @@
+.navbar-custom {
+      background-color: #000E88;
+    }
+
+    .navbar-custom .navbar-brand,.navbar-custom .nav-link {
+        background-color: #4040c0 !important;font-weight: bold;
+        }
+
+        .logoZ{
+          width: 4.5rem;
+          height: 4.5rem;
+          margin-left: 1;
+
+        }
+
+.img-perfil{
+          width: 9rem;
+          height: 9rem;
+          border-radius: 0.5rem;
+          margin-left: 5%;
+
+        }
+
+        .Pname{
+          font-size: 1.5rem;
+          font-weight: bold;
+          color: #000E88;
+          margin-left: 5%;
+          display: flex;
+          flex-direction: column;
+          padding: 1rem;
+        }
+
+.parent {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 1fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+height: 50%;
+border: 0px solid #000;
+}
+.parent .pp{
+  border: 1px solid #000;
+
+}
+
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh; 
+      width: 100vw;   
+    }
+
+    .Dleft{
+      width: 100%; 
+        max-height: max-content;
+    }
+    .Dright{
+width: 100%; 
+        max-height: max-content;
+    }
+
+    .Dcenter {
+      width: 100%;
+      max-height: max-content;
+      background-color: #f08080;
+    }
+
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background-color: aliceblue;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh; 
+      width: 100vw;  
+      background-color: aliceblue; 
+    }
+
+    .Dleft{
+      width: 100%; 
+        max-height: max-content;
+        background-color: aliceblue;
+
+    }
+
+    .Dcenter {
+      width: 100%;
+      max-height: max-content;
+      background-color: aliceblue;
+              margin-left: 20%;
+    }
+
+    .botones{
+      border-radius: 1rem;
+      margin-left: 2%;
+      width: 12rem;
+      height: 5rem;
+      font-size: 1.5rem;
+      text-decoration:double;
+      font-weight: 4rem;
+      background-color: #4a90e2;
+      color: white;
+      transition: background-color 0.3s;
+      border: 0cap;
+    }
+
+     .contenedor-punteado {
+      border: 2px dotted #000; /* Borde punteado de 2px en color negro */
+      padding: 20px;
+      margin: 20px;
+      width: 20%;
+      border-radius: 2rem;
+      width: 40%;
+      height: 30%;
+    }
+
+    .link{
+      font-size: 1.5rem;
+    }

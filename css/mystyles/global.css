@@ -1,0 +1,31 @@
+:root{
+--Titulo: "Quicksand", sans-serif;
+--Texto:"Raleway", sans-serif;
+--Alertas:"Roboto Condensed", sans-serif;
+
+--fondo: #213555;
+--contenedores: #3E5879;
+--navegadores: #D8C4B6;
+--delineados: #F5EFE7;
+--blanco: #fff;
+--negro: #000;
+--rojo: #e82f2f;
+--verde: #537D5D; 
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body{
+    font-size: 2rem;
+    text-align: justify;
+    
+}
+
+

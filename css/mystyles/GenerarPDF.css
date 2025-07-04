@@ -1,0 +1,54 @@
+.PDFrame{
+    width: 50%;
+    height: 40rem;
+    position: relative;
+    overflow: scroll;
+    
+    border: 10px solid #4a2cf7;
+    border-radius: 10px;
+}
+
+.iframe {
+      width: 100%;
+      height: 400px;
+      border: 1px solid #aaa;
+      margin-top: 20px;
+    }
+
+.botonM {
+  position: relative;
+  background: transparent; /* transparente porque el fondo lo pone ::before */
+  cursor: pointer;
+  border: none;
+  padding: 16px 32px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 10px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Fondo degradado con capa detrás del texto */
+.botonM::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; 
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #4a2cf7, #f7a24a);
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.botonM span {
+  position: relative;
+  z-index: 1;
+  
+}
+
+.botonM:active::before {
+  background: linear-gradient(45deg, #f74a4a, #4af7d3);
+}
