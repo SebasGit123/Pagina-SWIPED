@@ -1,72 +1,158 @@
+body{
+    padding-top: 5%;
+}
+
+.navi {
+    min-height: 3.5rem;
+  background-color: var(--fondo);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  z-index: 1000;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: var(--navegadores);
+  font-family: var(--Titulo);
+  text-decoration: none;
+  padding: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--fondo);
+  background-color: var(--navegadores);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(16, 16, 16, 0.15);
+}
+
+/* Título ISC || TESCI */
+.TESCI {
+  margin-right: 0%;
+  margin-left: 0%;
+  color: #fff;
+  font-family: var(--Titulo);
+  font-size: 2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .parent {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: 1fr;
-grid-column-gap: 0px;
-grid-row-gap: 0px;
-height: 70%;
-border: 1px solid #000;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 400px; /* alto general de la fila */
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  border: 1px solid #000;
+}
+
+.parent > .celda-izq {
+  height: 20rem;
+}
+.parent > .celda-centro {
+  height: 90rem;
+}
+.parent > .celda-der {
+  height: 20rem;
 }
 
  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-      height: 100%;
-    }
+html, body {
+  height: 100%;
+}
 
-    .container {
-      display: flex;
-      height: 100vh; 
-      width: 100vw;   
-    }
+/* Logo responsivo */
+.logoZ {
+  width: 60px;
+  height: auto;
+  margin-left: 0%;
+}
 
-    .Dleft{
-      width: 100%; 
-        max-height: max-content;
-    }
-    .Dright{
-width: 100%; 
-        max-height: max-content;
-    }
+@media (max-width: 991.98px) {
+  .logoZ {
+    width: 40px;
+  }
+}
 
-    .Dcenter {
-      width: 100%;
-      max-height: max-content;
-  
-    }
+/* Inputs responsivos */
+.red-frame-container input[type="password"], 
+.red-frame-container input[type="text"] {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 
-     .logoZ{
-          width: 4.5rem;
-          height: 4.5rem;
-          margin-left: 1;
-        }
-        .botot {
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            margin-left: 20%;
-            width: 50%;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .botoon {
-            background-color: #4a90e2;
-            color: white;
-            border: none;
-            padding: 12px 0px;
-            margin-left: 20%;
-            width: 25%;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+/* Iframe responsivo */
+iframe {
+  width: 100%;
+  min-height: 45%;
+  height: 80vh;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
 
+/* Ajustes para móviles */
+@media (max-width: 767.98px) {
+  .red-frame-container, .form-check, .accordion-body {
+    font-size: 0.95rem;
+  }
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  .accordion-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Botones personalizados */
+.botot, .botoon, .btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.botot, .btn-primary {
+  padding: 12px 20px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.botoon, .btn-danger {
+  padding: 12px 0px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+/* Elimina estilos antiguos que ya no se usan */
+.parent, .container, .Dleft, .Dcenter, .Dright {
+  all: unset;
+}
+
+.mt-3.w-100 > .btn {
+  margin-bottom: 0.5rem;
+}
+.mt-3.w-100 > .btn:last-child {
+  margin-bottom: 0;
+}
+
+.btn, .btn-primary, .btn-danger, .btn-secondary {
+  font-size: 1.8rem;      /* Cambia el tamaño del texto */
+  padding: 1rem 1rem;   /* Cambia el espacio interno (alto y ancho) */
+}

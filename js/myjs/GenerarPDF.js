@@ -1,41 +1,58 @@
-    let timeout = null;
-    let pdfActual = null;
+const { jsPDF } = window.jspdf;
 
-    function generarYMostrarPDF() {
-      const nombre = document.getElementById("nombre").value;
-      const correo = document.getElementById("correo").value;
-      const mensaje = document.getElementById("mensaje").value;
+const nombreInput = document.getElementById('nombre');
+const apellidoInput = document.getElementById('apellido');
+const pdfViewer = document.getElementById('pdfViewer');
+const printBtn = document.getElementById('printBtn');
 
-      const doc = new jsPDF();
-      doc.setFontSize(14);
-      doc.text("Vista previa del formulario", 10, 10);
-      doc.setFontSize(12);
-      doc.text("Nombre: " + nombre, 10, 20);
-      doc.text("Correo: " + correo, 10, 30);
-      doc.text("Mensaje:", 10, 40);
-      doc.text(mensaje, 10, 50);
+let currentBlobUrl = '';
 
-      // Guarda el PDF actual en memoria
-      pdfActual = doc;
+function generatePDF() {
+  const doc = new jsPDF({
+    orientation: 'landscape', 
+    unit: 'mm',
+    format: 'a4'
+  });
 
-      // Mostrar en el visor
-      const dataURI = doc.output("datauristring");
-      document.getElementById("visorPDF").src = dataURI;
-    }
+  const nombre = nombreInput.value || '...';
+  const apellido = apellidoInput.value || '...';
 
-    function guardarPDF() {
-      if (pdfActual) {
-        pdfActual.save("formulario.pdf");
-      } else {
-        alert("Primero debes llenar el formulario para generar el PDF.");
-      }
-    }
+  doc.setFontSize(20);
+  doc.text(`Nombre: ${nombre}`, 20, 40);
+  doc.text(`Apellido: ${apellido}`, 20, 60);
+  doc.text('División de la Universidad de la República', 20, 80);
 
-    // Detectar cambios en los campos
-    const campos = document.querySelectorAll("#miFormulario input, #miFormulario textarea");
-    campos.forEach(campo => {
-      campo.addEventListener("input", () => {
-        clearTimeout(timeout);
-        timeout = setTimeout(generarYMostrarPDF, 500); // Espera antes de actualizar
-      });
-    });
+  // Liberar blob anterior
+  if (currentBlobUrl) {
+    URL.revokeObjectURL(currentBlobUrl);
+  }
+
+  // Generar blob URL y asignar al iframe
+  const pdfBlob = doc.output('blob');
+  currentBlobUrl = URL.createObjectURL(pdfBlob);
+  pdfViewer.src = currentBlobUrl;
+}
+
+nombreInput.addEventListener('input', generatePDF);
+apellidoInput.addEventListener('input', generatePDF);
+
+printBtn.addEventListener('click', () => {
+  const doc = new jsPDF({
+    orientation: 'landscape', 
+    unit: 'mm',
+    format: 'a4'
+  });
+
+  const nombre = nombreInput.value || '...';
+  const apellido = apellidoInput.value || '...';
+
+  doc.setFontSize(20);
+  doc.text(`Nombre: ${nombre}`, 20, 40);
+  doc.text(`Apellido: ${apellido}`, 20, 60);
+
+  doc.autoPrint();
+  doc.output('dataurlnewwindow');
+});
+
+// Generar PDF inicial
+generatePDF();

@@ -2,7 +2,7 @@
   --Titulo: "Quicksand", sans-serif;
   --Texto: "Raleway", sans-serif;
   --Alertas: "Roboto Condensed", sans-serif;
-  --fondo: #213555;
+  --fondo: rgba(33, 53, 85,1);
   --contenedores: #3E5879;
   --navegadores: rgba(255, 255, 255, 0.5);
   --delineados: #F5EFE7;
@@ -253,7 +253,8 @@ display: grid;
 
 /* Efecto al pasar el cursor */
 .card-container:hover .card {
-    transform: rotateY(180deg); /* Gira la tarjeta 180 grados al hacer hover */
+    transform: rotateY(180deg);
+    rotate: -2deg; 
 }
 
 /*
