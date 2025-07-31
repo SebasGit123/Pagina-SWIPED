@@ -103,6 +103,7 @@ h1, h2, h3, h4, h5, h6, .quicksand-title, .TESCI {
   margin-left: 1rem;
   font-weight: bold;
   letter-spacing: 2px;
+  text-decoration: none;
 }
 
 /* BARRA DE NAVEGACION */
@@ -179,10 +180,11 @@ h1, h2, h3, h4, h5, h6, .quicksand-title, .TESCI {
 
 .cards {
   grid-auto-rows: max-content;
-display: grid;
+  display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
   gap: 1.5rem; /* Espacio entre cartas */
-  width: 80%;
+  width: 90%;
+  height: auto;
   margin: 0 auto;
   background-color: var(--colorC--);
   border: 2px solid #000000;
@@ -192,8 +194,8 @@ display: grid;
 }
 
 .card {
-  width: 100%;      /* Ocupa todo el ancho de la columna */
-  min-width: 0;     /* Permite que se reduzca si es necesario */
+  width: 80%;      /* Ocupa todo el ancho de la columna */
+  min-width: 0%;     /* Permite que se reduzca si es necesario */
   box-sizing: border-box;
 }
 
@@ -202,60 +204,141 @@ display: grid;
   margin-right: 20px;
 }
 
-/* Estilos generales para el contenedor y la tarjeta */
+
 .card-container {
-    width: 90%; /* Ancho de tu tarjeta */
-    height: 15rem; /* Alto de tu tarjeta */
-    perspective: 1000px; /* Define la perspectiva 3D para el efecto de volteo */
-    margin: 50px auto; /* Para centrarla en la página de ejemplo */
+    width: 75%;
+    height: 15rem;
+    perspective: 1000px;
+    margin: 50px auto;
     aspect-ratio: unset;
+}
+
+.card-title{
+    font-family: var(--Titulo);
+    font-size: 1.5rem;
+    color: var(--negro);
+    text-align: center;
+    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.card-text{
+  margin-top: 1rem;
+  font-family: var(--Texto);
+  text-align: justify;
+  flex-grow: 1; /* hace que el texto use el espacio disponible */
+  margin-bottom: 1rem;
 }
 
 .card {
     width: 100%;
     height: 100%;
-    position: relative; /* Necesario para posicionar las caras */
-    transform-style: preserve-3d; /* ¡IMPORTANTE! Mantiene los elementos hijos en el espacio 3D */
-    transition: transform 0.8s ease-in-out; /* Transición suave para el giro */
+    position: relative; 
+    transform-style: preserve-3d; 
+    transition: transform 0.8s ease-in-out; 
 }
 
-/* Estilos para ambas caras de la tarjeta */
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .card-face {
     position: absolute;
     width: 100%;
-    height: 100%;
-    backface-visibility: hidden; /* ¡IMPORTANTE! Oculta la cara cuando está "mirando hacia atrás" */
-    display: flex; /* Para centrar la imagen dentro de la cara */
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Para que la imagen no se salga si es más grande */
-    border-radius: 8px; /* Bordes redondeados opcionales */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra opcional */
+    height: 12rem;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;      /* Botón abajo */
+    align-items: center;            /* Centra horizontalmente */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+.btn {
+  background-color: var(--fondo);
+  color: var(--blanco);
+  border: double;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: var(--Titulo);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: auto;           /* Solo el ancho necesario */
+  margin-bottom: 16px;   /* Espacio inferior opcional */
 }
+
 
 .card-face img {
-  object-fit: cover;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin distorsionarse */
+    object-fit:fill;
+    
 }
 
-/* Posicionamiento inicial de las caras */
+
 .card-front {
-    transform: rotateY(0deg); /* La cara frontal no tiene rotación inicial */
-    background-color: #f0f0f0; /* Color de fondo si la imagen no cubre todo */
+    transform: rotateY(0deg);
+    background-color: #f0f0f0;
 }
 
 .card-back {
-    transform: rotateY(180deg); /* La cara trasera está girada 180 grados inicialmente */
-    background-color: #e0e0e0; /* Color de fondo si la imagen no cubre todo */
+    transform: rotateY(180deg);
+    background-color: #e0e0e0;
 }
 
-/* Efecto al pasar el cursor */
 .card-container:hover .card {
     transform: rotateY(180deg);
     rotate: -2deg; 
+    
 }
+
+
+.art {
+  width: 90%;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra opcional */
+}
+.art1{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
+  
+}
+
+.div1 { }
+.div2 { }
+.div3 { }
+.div4 { }
+.div5 { }
+.div6 { }
+.div7 { }
+.div8 { }
+.div9 { }
+.div10 { }
+
 
 /*
 Titulos: QuickSand

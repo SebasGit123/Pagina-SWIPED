@@ -28,6 +28,7 @@
     <a class="TESCI">ISC || TESCI</a>
     <button class="navbar-toggler" ...></button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="iniciarSesion.html">Iniciar sesión</a>
@@ -97,7 +98,7 @@
   <div class="card-container">
     <div class="card">
         <div class="card-face card-front">
-            <img src="img/lista.jpg" alt="Imagen frontal">
+            <img src="img/LogoCardv1.png" alt="Imagen frontal">
         </div>
         <div class="card-face card-back">
             <img src="img/libros.jpg" alt="Imagen trasera">
@@ -105,28 +106,30 @@
     </div>
 </div>
   <div class="card-body">
-    <h5 class="card-title">!Bienvenidos al Sistema Integral para la Asignación de Actividades!</h5>
+    <h5 class="card-title">!Bienvenidos al Sistema Integral para la creación de Rubricas!</h5>
     <p class="card-text">Este sistema ha sido diseñado con el fin de optimizar el proceso de asignación de actividades en el ámbito de la instrumentación didactica.
 Con él, facilitara la gestión de las tareas de forma más eficiente, asegurando que cada actividad se asigne de manera rápida y conforme a los  estándares establecidos.</p>
-    <a href="#" class="btn btn-primary">Ver mas</a>
+
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUno">Ver mas</a>
   </div>
+  
 </div>
 
 <div class="card">
    <div class="card-container">
     <div class="card">
         <div class="card-face card-front">
-            <img src="imagen-frontal.jpg" alt="Imagen frontal">
+            <img src="img/LogoCardv1.png" alt="Imagen frontal">
         </div>
         <div class="card-face card-back">
-            <img src="imagen-trasera.jpg" alt="Imagen trasera">
+            <img src="img/desarrolloWeb2.jpg" alt="Imagen trasera">
         </div>
     </div>
 </div>
   <div class="card-body">
     <h5 class="card-title">¿Cómo funciona?</h5>
     <p class="card-text">En esta pagina se encuentra todos los aspectos en cuanto a los lineamientos de la instrumentación, la función principal de esta pagina es agilizar los procesos a través de una  interfaz intuitiva, asigna las actividades relacionadas con la instrumentación de manera simple y con  mayor facilidad de esta manera se busca reducir los tiempos y la entrega de actividades que se lleva a su vez se realicen de acuerdo con los mismos procedimientos y criterios.</p>
-    <a href="#" class="btn btn-primary">Ver mass</a>
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDos">Ver mas</a>
   </div>
 </div>
 
@@ -134,23 +137,114 @@ Con él, facilitara la gestión de las tareas de forma más eficiente, asegurand
     <div class="card-container">
     <div class="card">
         <div class="card-face card-front">
-            <img src="imagen-frontal.jpg" alt="Imagen frontal">
+            <img src="img/LogoCardv1.png" alt="Imagen frontal">
         </div>
         <div class="card-face card-back">
-            <img src="imagen-trasera.jpg" alt="Imagen trasera">
+            <img src="img/maestro1.jpg" alt="Imagen trasera">
         </div>
     </div>
 </div>
   <div class="card-body">
     <h5 class="card-title">¿A Quién Está Dirigido?</h5>
     <p class="card-text">Este sistema está dirigido hacia los docentes para que de esta manera se pueda agilizar el proceso de la asignación de las actividades didácticas las cuales ya están marcadas en la instrumentación.</p>
-    <a href="#" class="btn btn-primary">Ver mas</a>
+    
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTres">Ver mas</a>
   </div>
 </div>
 
 </div>
-<br >
+<br>
+<!-- MODALS DESPLEGABLES -->
 
+<!-- Modal 1 -->
+<div class="modal fade" id="modalUno" tabindex="-1" aria-labelledby="modalUnoLabel" aria-hidden="true"
+     data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalUnoLabel">Modal Uno</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Mucho texto aquí -->
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p>Repite muchas veces contenido largo para ver el scroll.</p>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="modalDos" tabindex="-1" aria-labelledby="modalDosLabel" aria-hidden="true"
+     data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalDosLabel">Modal Dos</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Mucho texto aquí -->
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p>Repite muchas veces contenido largo para ver el scroll.</p>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="modalTres" tabindex="-1" aria-labelledby="modalTresLabel" aria-hidden="true"
+     data-bs-backdrop="static" data-bs-keyboard="false">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modalLabel">Modal Tres</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Mucho texto aquí -->
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p>Repite muchas veces contenido largo para ver el scroll.</p>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ARTICULOS -->
+<div class="art">
+
+<div class="art1"> 
+  <div class="div1">1</div>
+  <div class="div2">2</div>
+  <div class="div3">3</div>
+  <div class="div4">4</div>
+  <div class="div5">5</div>
+  <div class="div6">6</div>
+  <div class="div7">7</div>
+  <div class="div8">8</div>
+  <div class="div9">9</div>
+  <div class="div10">10</div>
+  
+
+</div>
+
+</div>
+ 
+
+<br><br>
 <div class="cuadro-transparente alingHeader quicksand-subtitle" id="contactos">
   
   <h4><a>Facebook: example@</a></h4>
