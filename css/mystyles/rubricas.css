@@ -243,4 +243,15 @@ align-items: center;
         background-color: #f8f9fa;
     }
 
-   
+   .textA{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border: 1px solid var(--delineados);
+    border-radius: 0.5rem;
+    resize: none; /* Evita el redimensionamiento manual */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+    font-family: var(--Texto);
+    line-height: 1.5;
+    transition: height 0.2s ease;
+   }

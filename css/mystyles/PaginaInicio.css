@@ -264,7 +264,7 @@ h1, h2, h3, h4, h5, h6, .quicksand-title, .TESCI {
   color: var(--blanco);
   border: double;
   padding: 8px 18px;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
   font-family: var(--Titulo);
   font-size: 0.95rem;

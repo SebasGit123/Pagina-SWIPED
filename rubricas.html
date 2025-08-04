@@ -58,7 +58,14 @@
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">Nombre del docente</label>
-                    <input type="text" class="form-control" placeholder="Nombre completo">
+<select class="form-select">
+    <option selected>Seleccione</option>
+    <option>Josue Luis Camacho Campero</option>
+    <option>María Elena Rodríguez Sánchez</option>
+    <option>Carlos Alberto Méndez Ortega</option>
+    <option>Laura Patricia Gómez Ramírez</option>
+    <option>Roberto Alejandro Torres Hernández</option>
+</select>
                 </div>
                 <div class="col-md-4">
                     <label class="form-label">Asignatura</label>
@@ -209,47 +216,286 @@ Para cada uno de los temas se sugiere que el docente promueva la práctica a tra
     </div>
 
     <!-- Desarrollo de Competencias -->
-    <div class="card mb-4">
-        <div class="card-header  text-white">
-            <h5 class="mb-0">Desarrollo de Competencias</h5>
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Temas y subtemas para desarrollar la competencia específica</th>
-                        <th>Actividades de Aprendizaje</th>
-                        <th>Actividades de Enseñanza</th>
-                        <th>Desarrollo de Competencias</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td></td><td></td><td></td><td></td></tr>
-                    
-                    <tr><td></td><td></td><td></td><td></td></tr>
-                </tbody>
-            </table>
-        </div>
+<div class="card mb-4">
+    <div class="card-header text-white">
+        <h5 class="mb-0">Desarrollo de Competencias</h5>
     </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Temas y subtemas para desarrollar la competencia específica</th>
+                    <th>Actividades de aprendizaje</th>
+                    <th>Actividades de enseñanza</th>
+                    <th>Desarrollo de competencias genéricas</th>
+                    <th>Horas teóricoprácticas</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <textarea class="auto-resize-textarea" rows="me-auto" placeholder="Competencia a desarrollar">
+Encuadre de la Materia 
+Presentación del SGI 
+Examen Diagnostica 
+1. Sensores 
+1.1 Ópticos 
+1.1.1 Tipos 
+1.1.2 Funcionamiento 
+1.1.3 Características 
+1.1.4 Modo de comunicación. 
+1.2 Temperatura. 
+1.2.1 Tipos 
+1.2.2 Funcionamiento 
+1.2.3 Características 
+1.2.4 Modo de comunicación. 
+1.3 Presión. 
+1.3.1 Tipos 
+1.3.2 Funcionamiento 
+1.3.3 Características 
+1.3.4 Modo de comunicación. 
+1.4 Proximidad. 
+1.4.1 Tipos 
+1.4.2 Funcionamiento 
+1.4.3 Características 
+1.4.4 Modo de comunicación
+                        </textarea>
+                    </td>
+                    <td>
+                        <textarea class="auto-resize-textarea" rows="me-auto" placeholder="Competencia a desarrollar">
+Evaluación diagnostica Encuadre 
+• Realizar el examen de Diagnóstico, así como su corrección. 
+• Investigar de manera individual en diferentes fuentes de información – biblioteca digital e-libro- los tipos de sensores su funcionamiento características y modos de comunicación y realizar a un resumen en formato de evidencia 
+• Realizar en base al resumen un mapo conceptual en Cmap Tools, comparando función, características y modo de comunicación de cada tipo de sensor, incluyendo una imagen. 
+• Aplicar los diferentes tipos de sensores desarrollando cada una de las prácticas 
+• Plantear la problemática a desarrollar en el proyecto integrador y exponerla.
+                        </textarea>
+                    </td>
+                    <td>
+                        <textarea class="auto-resize-textarea" rows="me-auto" placeholder="Competencia a desarrollar">
+• Firma de encuadre 
+• Examen Diagnostico 
+• Explicar al estudiantado el tema con diapositivas, videos y se utilizaran los dispositivos electrónicos de manera física para la explicación de su funcionamiento 
+• Mostrar casos de estudio en la vida real donde se utilizan los sensores y cuál es la ventaja de utilizarlos 
+• Explicar al estudiantado como conectar los diferentes tipos de sensores a la placa Arduino Uno 
+• Guiar las prácticas de cada uno de los sensores. 
+• Explicar de manera puntual los puntos a considerar en el proyecto integrador
+                        </textarea>
+                    </td>
+                    <td>
+                        <textarea class="auto-resize-textarea" rows="me-auto" placeholder="Competencia a desarrollar">
+• Habilidades para buscar, procesar y analizar información procedente de fuentes diversas 
+• Capacidad de comunicación oral y escrita 
+• Capacidad de trabajo en equipo 
+• Habilidad para trabajar en forma autónoma.
+                        </textarea>
+                    </td>
+                    <td>
+                        <textarea class="auto-resize-textarea" rows="me-auto" placeholder="Competencia a desarrollar">
+4-4 horas (1-2 semanas)
+                        </textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-    <!-- Indicadores de Alcance -->
-    <div class="card mb-4">
-        <div class="card-header text-white">
-            <h5 class="mb-0">Indicadores de Alcance</h5>
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered">
-                <tbody>
-                    <tr><td><strong>Indicadores de alcance</strong></td><td class="porcentajetd"><strong>Valor del indicador</strong></td></tr>
-                    <tr><td><textarea class="auto-resize-textarea">A. Investiga y Compara los Tipos de Sensores su funcionamiento, características y modos de comunicación</textarea></td><td><textarea class="porcentajes">30%</textarea></td></tr>
-                    <tr><td><textarea class="auto-resize-textarea">B. Practica con el funcionamiento de cada uno de los Sensores</textarea></td><td><textarea class="porcentajes">60%</textarea></td></tr>
-                    <tr><td><textarea class="auto-resize-textarea">C. Plantea la problemática del proyecto a desarrollar</textarea></td><td><textarea class="porcentajes">10%</textarea></td></tr>
-                    <tr><td><textarea class="auto-resize-textarea"></textarea></td><td><textarea class="porcentajes"></textarea></td></tr>
-                    <tr><td><textarea class="auto-resize-textarea"></textarea></td><td><textarea class="porcentajes"></textarea></td></tr>
-                </tbody>
-            </table>
-        </div>
+<!-- Tabla de Indicadores de Alcance -->
+<div class="card mb-4">
+    <div class="card-header text-white ">
+        <h5 class="mb-0">Indicadores de Alcance</h5>
     </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th width="10%">No. Competencia</th>
+                    <th width="40%">Competencia</th>
+                    <th width="40%">Indicador de alcance</th>
+                    <th width="10%">Porcentaje</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Primera fila -->
+                <tr>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>Aplica principios físicos y comprende transductores y sensores</option>
+                            <option>Analiza y sintetiza la función de los sensores</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>Comprende los principios físicos de transductores y sensores</option>
+                            <option>Identifica tipos de sensores y sus características</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>10%</option>
+                            <option>30%</option>
+                            <option>50%</option>
+                        </select>
+                    </td>
+                </tr>
+                
+                <!-- Segunda fila (con diferentes valores) -->
+                <tr>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>Aplica principios físicos y comprende transductores y sensores</option>
+                            <option>Analiza y sintetiza la función de los sensores</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccione</option>
+                            <option>Comprende los principios físicos de transductores y sensores</option>
+                            <option>Identifica tipos de sensores y sus características</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>20%</option>
+                            <option>40%</option>
+                            <option>60%</option>
+                        </select>
+                    </td>
+                </tr>
+                <!-- Tercera fila (con diferentes valores) -->  
+                 <tr>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                           <option>Seleccionar</option>
+                            <option>Aplica principios físicos y comprende transductores y sensores</option>
+                            <option>Analiza y sintetiza la función de los sensores</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>Comprende los principios físicos de transductores y sensores</option>
+                            <option>Identifica tipos de sensores y sus características</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccionar</option>
+                            <option>20%</option>
+                            <option>40%</option>
+                            <option>60%</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Objetivos de la materia -->
+
+<div class="card mb-4">
+    <div class="card-header text-white ">
+        <h5 class="mb-0">Objetivos de la asignatura</h5>
+    </div>
+    <div class="card-body">
+               <table class="table table-bordered">
+            <thead>
+                <tr>                    
+                    <th width="50%">Objetivo</th>
+                    <th width="50%">....</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Primera fila -->
+                <tr>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccione</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccione</option>
+                            <option>...</option>
+                            <option>..</option>
+                        </select>
+                    </td>                    
+                
+                <!-- Segunda fila (con diferentes valores) -->
+                <tr>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccione</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccione</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </td>
+
+
+                <!-- Tercera fila (con diferentes valores) -->  
+                 <tr>
+                    <td>
+                        <select class="form-select form-select-sm">
+                            <option>Seleccione</option>
+                            <option>...</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="form-select form-select-sm">
+                           <option>Seleccione</option>
+                            <option>...</option>
+                            <option>...</option>
+                        </select>
+                    </td>
+            </tbody>
+        </table>
+            </div>
+            </div>
+            
+            
 
     <!-- Niveles de Desempeño -->
     <div class="card mb-4">
@@ -373,7 +619,7 @@ Para cada uno de los temas se sugiere que el docente promueva la práctica a tra
             <table class="table table-bordered">
                 <thead><tr><th><Strong>Fuentes de Información</Strong></th><th><strong>Apoyos Didácticos</strong></th></tr></thead>
                 <tbody>
-                    <tr><td><textarea class="auto-resize-textarea">Fuentes impresas (libros)
+                    <tr><td><textarea class="textA" rows="15">Fuentes impresas (libros)
 1. Brey, Barry B. (2006). Microprocesadores intel : arquitectura, progradation e
 interfaz : 8086 (7a edición). : pearson educación isbn: 9789702608042.
 2. Palacios, E., Remiro, F.,Lopez, L. (2004). Microcontrolador pic16f84 desarrollo
@@ -402,7 +648,7 @@ Pearson Educación.
 Marcombo.
 14. Gook, Michael. (2004). PC Hardware Interfaces A Developer’s Reference.: Alist
 15. James, Kevin. (200). PC Interfacing and Data Adquisition.: Newnes</textarea></td>
-                        <td><textarea class="auto-resize-textarea">Pantalla, Pizarrón, Equipo de Cómputo, Kit Arduino con Sensores</textarea></td></tr>
+                        <td><textarea class="textA" rows="15">Pantalla, Pizarrón, Equipo de Cómputo, Kit Arduino con Sensores</textarea></td></tr>
                 </tbody>
             </table>
         </div>

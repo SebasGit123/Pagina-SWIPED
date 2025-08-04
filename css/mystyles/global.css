@@ -74,12 +74,12 @@ body{
   display: inline-block;
   outline: none;
   border-radius: 5px;
-  border: 2px solid #b59700c4;
-  background: #b59700c4;
+  border: 2px solid rgba(223, 188, 11, 0.705);
+  background: rgba(223, 188, 11, 0.705);
 }
 .css-button-rounded--yellow:hover {
-  background: #fff;
-  color: #b59700c4
+  background: rgba(255, 255, 255, 0.544);
+  color: rgba(223, 188, 11, 0.705)
 }
 
 /* Boton azul */
