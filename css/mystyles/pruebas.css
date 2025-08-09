@@ -1,0 +1,122 @@
+:root {
+  --Titulo: "Quicksand", sans-serif;
+  --Texto: "Raleway", sans-serif;
+  --Alertas: "Roboto Condensed", sans-serif;
+  --fondo: rgba(33, 53, 85,1);
+  --contenedores: #3E5879;
+  --navegadores: rgba(255, 255, 255, 0.5);
+  --delineados: #F5EFE7;
+  --blanco: #fff;
+  --negro: #000;
+  --rojo: #e82f2f;
+  --verde: #537D5D;
+}
+
+body {
+  padding-top: 70px;
+}
+
+.sidebar {
+  min-height: 100vh;
+  padding-top: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #sidebarMenu {
+    display: none;
+  }
+  #sidebarMenu.show {
+    display: block;
+    position: absolute;
+    z-index: 999;
+    background: #fff;
+    width: 250px;
+    top: 56px;
+    left: 0;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.collapse-submenu {
+  transition: height 0.3s ease;
+}
+
+.logoZ {
+  width: 4rem;
+  height: 4rem;
+  margin-left: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.TESCI {
+  color: #fff;
+  font-family: var(--Titulo);
+  font-size: 2rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.seccion {
+  display: grid;
+  grid-template-columns: 30% 70%;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.encabezado {
+  background-color: var(--fondo);
+  padding: 20px;
+}
+
+.NavTit {
+  color: #fff;
+  font-family: var(--Titulo);
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* Nuevas reglas CSS para la tabla */
+.table-container {
+  max-height: 400px; /* Limita la altura del contenedor para que la tabla tenga scroll */
+  overflow-y: auto; /* Permite el scroll vertical */
+  margin-top: 20px;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0; 
+  z-index: 100;
+}
+
+.table-responsive {
+  border-collapse: separate;
+  border-spacing: 0;
+}

@@ -6,9 +6,10 @@
 	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
   
   
-  <link rel="stylesheet" href="css/global.css">  
+  
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/mystyles/PaginaInicio.css">
+  <link rel="stylesheet" href="css/global.css">  
 
   <link rel="stylesheet" href="css/mystyles/Fuentes.css">
   
@@ -16,36 +17,49 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+
   
 	<title>Inicio SWIPED</title>
 </head>
 
 <body class="bodM">   
 
-<nav class="navbar navbar-expand-lg navbar-dark navi">
+<header class="navbar navbar-expand-lg navbar-dark navi">
   <div class="container-fluid">
-    <img src="img/logo.png" class="logoZ">
-    <a class="TESCI">ISC || TESCI</a>
-    <button class="navbar-toggler" ...></button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form>
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="login.html">Iniciar sesión</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#Acerca">> Acerca de esta pagina</a>
-        </li>
-         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#contactos">> Contactos</a>
-        </li>
-        
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="img/logo.png" alt="Logo" class="logoZ" />
+      <span class="TESCI">ISC || TESCI</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menú</h5>
+        <button type="button" class="btn-close btn-close-white text-reset" data-bs-dismiss="offcanvas"
+          aria-label="Cerrar"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link linkNav" href="login.php">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link linkNav" href="#Acerca">Acerca de esta pagina</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link linkNav" href="#contactos">Contactos</a>
+          </li>
         </ul>
-      </form>
+      </div>
     </div>
   </div>
-</nav>
- <br><br>
+</header>
+<br> 
 	
 	<h1 class="quicksand-title" style="text-align: center;;">Sistema Gestor Web Integral ISC</h1>
    <p class="quicksand-subtitle" style="text-align: center;">Una herramienta para docentes</p>
@@ -110,7 +124,7 @@
     <p class="card-text">Este sistema ha sido diseñado con el fin de optimizar el proceso de asignación de actividades en el ámbito de la instrumentación didactica.
 Con él, facilitara la gestión de las tareas de forma más eficiente, asegurando que cada actividad se asigne de manera rápida y conforme a los  estándares establecidos.</p>
 
-    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUno">Ver mas</a>
+    <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalUno">Acerca de este sistema</a>
   </div>
   
 </div>
@@ -127,8 +141,8 @@ Con él, facilitara la gestión de las tareas de forma más eficiente, asegurand
     </div>
 </div>
   <div class="card-body">
-    <h5 class="card-title">¿Cómo funciona?</h5>
-    <p class="card-text">En esta pagina se encuentra todos los aspectos en cuanto a los lineamientos de la instrumentación, la función principal de esta pagina es agilizar los procesos a través de una  interfaz intuitiva, asigna las actividades relacionadas con la instrumentación de manera simple y con  mayor facilidad de esta manera se busca reducir los tiempos y la entrega de actividades que se lleva a su vez se realicen de acuerdo con los mismos procedimientos y criterios.</p>
+    <h5 class="card-title">informacion</h5>
+    <p class="card-text"></p>
     <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalDos">Ver mas</a>
   </div>
 </div>
@@ -145,8 +159,8 @@ Con él, facilitara la gestión de las tareas de forma más eficiente, asegurand
     </div>
 </div>
   <div class="card-body">
-    <h5 class="card-title">¿A Quién Está Dirigido?</h5>
-    <p class="card-text">Este sistema está dirigido hacia los docentes para que de esta manera se pueda agilizar el proceso de la asignación de las actividades didácticas las cuales ya están marcadas en la instrumentación.</p>
+    <h5 class="card-title">informacion</h5>
+    <p class="card-text"></p>
     
     <a class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTres">Ver mas</a>
   </div>
@@ -162,14 +176,16 @@ Con él, facilitara la gestión de las tareas de forma más eficiente, asegurand
   <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="modalUnoLabel">Modal Uno</h1>
+        <h1 class="modal-title fs-5" id="modalUnoLabel">Acerca de este sistema</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
       </div>
       <div class="modal-body">
-        <!-- Mucho texto aquí -->
-        <p>Lorem ipsum dolor sit amet...</p>
-        <p>Repite muchas veces contenido largo para ver el scroll.</p>
-        ...
+        <h5>¿Cómo funciona?</h5>
+        <p>En esta pagina se encuentra todos los aspectos en cuanto a los lineamientos de la instrumentación, la función principal de esta pagina es agilizar los procesos a través de una  interfaz intuitiva, asigna las actividades relacionadas con la instrumentación de manera simple y con  mayor facilidad de esta manera se busca reducir los tiempos y la entrega de actividades que se lleva a su vez se realicen de acuerdo con los mismos procedimientos y criterios.</p>
+        <br>
+        <h5>¿A Quién Está Dirigido?</h5>
+        <p>Este sistema está dirigido hacia los docentes para que de esta manera se pueda agilizar el proceso de la asignación de las actividades didácticas las cuales ya están marcadas en la instrumentación.</p>
+        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -247,10 +263,10 @@ Con él, facilitara la gestión de las tareas de forma más eficiente, asegurand
 <br><br>
 <div class="cuadro-transparente alingHeader quicksand-subtitle" id="contactos">
   
-  <h4><a>Facebook: example@</a></h4>
-  <h4><a>Twitter: example@</a></h4>
-  <h4><a>Servicios escolares: 5566890978</a></h4>
-  <h4><a>Tiktok: Escuela_879</a></h4>
+  <h4><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwi70IG5__uOAxWIHEQIHckLJJYQFnoECAwQAQ&url=https%3A%2F%2Fwww.facebook.com%2FComunidad.Tesci%2F%3Flocale%3Des_LA&usg=AOvVaw1h5IszNHK__Y6KYHQqzzNn&opi=89978449" class="links">Facebook</a></h4>
+  <h4><a href="" class="links">Twitter: example@</a></h4>
+  <h4><a href="" class="links">Servicios escolares: 5566890978</a></h4>
+  <h4><a href="" class="links">Tiktok: Escuela_879</a></h4>
 
 </div>
 

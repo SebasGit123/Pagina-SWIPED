@@ -3,9 +3,9 @@
 --Texto:"Raleway", sans-serif;
 --Alertas:"Roboto Condensed", sans-serif;
 
---fondo: #213555;
+--fondo: rgba(33, 53, 85,1);
 --contenedores: #3E5879;
---navegadores: #D8C4B6;
+--navegadores: #030202;
 --delineados: #F5EFE7;
 --blanco: #fff;
 --negro: #000;
@@ -16,11 +16,8 @@
 
 
 body{
-
-    text-align: justify;
-    
+    text-align: justify;   
 }
-
 
  /* BOTONES */
 
@@ -95,12 +92,12 @@ body{
   display: inline-block;
   outline: none;
   border-radius: 5px;
-  border: 2px solid rgba(37, 37, 247,0.8);
-  background: rgba(37, 37, 247,0.8);
+  border: 2px solid var(--fondo);
+  background: var(--fondo);
 }
 .css-button-rounded--blue:hover {
   background: #fff;
-  color: rgba(37, 37, 247,0.8);
+  color: var(--fondo);
 }
 
 /* Boton rojo */
@@ -145,4 +142,25 @@ body{
   color: rgb(4, 165, 63)
 }
 
+/* BOTON GRIS */
 
+.css-button-sharp--sand {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 2px solid #adb5bd;
+  background: #adb5bd;
+}
+.css-button-sharp--sand:hover {
+  background: #fff;
+  color: #adb5bd
+}
+
+/* BOTONES PARA CRUD */
