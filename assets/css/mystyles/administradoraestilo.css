@@ -41,7 +41,7 @@ body {
 .nav-link {
   font-size: 1rem;
   font-weight: 500;
-  color: #fff; /* blanco dentro del offcanvas oscuro */
+  color: #000000; /* blanco dentro del offcanvas oscuro */
 }
 
 .nav-link:hover {
@@ -79,6 +79,26 @@ body {
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: #213555; }
+}
+.user-info {
+  text-align: center;          
+  margin-bottom: 20px;         
+}
+
+.user-info .avatar {
+  display: block;              
+  margin: 0 auto;              
+  width: 80px;                  
+  height: 80px;
+  border-radius: 50%;          
+  object-fit: cover;            
+}
+
+.username {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
 }
 /* Flip Card */
 .flip-card {
@@ -158,13 +178,22 @@ body {
     align-items: center;
   }
 }
-
-.logos{
-  width: fit-content;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+.main-content {
+display: flex;
+margin-top: 4rem;
+}
+.sidebar {
+width: 250px;
+background-color: #f8f9fa;
+padding-top: 20px;
+border-right: 1px solid #ddd;
+}
+.titulo-central {
+  margin-top: 5rem;
+}
+.carousel-container {
+flex: 1;
+padding: 20px;
 }
 
 

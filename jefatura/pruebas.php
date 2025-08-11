@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../assets/css/mystyles/pruebas.css">
   <link rel="stylesheet" href="../assets/css/mystyles/global.css">
   <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="../assets/Fontawesome/css/all.min.css">
 </head>
 <body>
 <header class="navbar navbar-expand-lg navbar-dark fixed-top encabezado">
@@ -38,10 +39,13 @@
             <a class="nav-link" href="#"><img src="../assets/img/inicio1.png" width="20" height="20" alt=""> <span class="ms-1">Inicio</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><img src="../assets/img/instru1.png" width="20" height="20"> <span class="ms-1">Instrument.</span></a>
+          <i class="fa-solid fa-file" href="#">Instrument.</i>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><img src="../assets/img/docentes1.png" width="20" height="20"> <span class="ms-1">Docentes</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="../assets/img/docentes1.png" width="20" height="20"> <span class="ms-1">Reportes</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"><img src="../assets/img/academia1.png" width="20" height="20"> <span class="ms-1">Academias</span></a>
