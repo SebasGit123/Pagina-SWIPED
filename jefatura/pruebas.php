@@ -35,50 +35,59 @@
         <br><br>
         <img src="../assets/img/ArchivosDocen.png" alt="Usuario" class="avatar my-3"> 
         <ul class="nav flex-column text-primary">
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="../assets/img/inicio1.png" width="20" height="20" alt=""> <span class="ms-1">Inicio</span></a>
-          </li>
-          <li class="nav-item">
-          <i class="fa-solid fa-file" href="#">Instrument.</i>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="../assets/img/docentes1.png" width="20" height="20"> <span class="ms-1">Docentes</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="../assets/img/docentes1.png" width="20" height="20"> <span class="ms-1">Reportes</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="../assets/img/academia1.png" width="20" height="20"> <span class="ms-1">Academias</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><img src="../assets/img/asig1.png" width="20" height="20"> <span class="ms-1">Asignaturas</span></a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="../assets/img/opcion1.png" width="20" height="20">
-              <span class="ms-1">Más opciones</span>
-            </a>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img src="../assets/img/conf1.png" width="20" height="20">
-                  <span class="ms-1">Configuración</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  <img src="../assets/img/cont1.png" width="20" height="20">
-                  <span class="ms-1">Contacto</span>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  <button class="css-button-rounded--red espaciado" onclick="location.href='INDEX.html'">
-                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
-                  </button>
-                </a>
-              </li>
-            </ul>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-home me-2"></i>Inicio
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-file-alt me-2"></i>Instrumentos
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-chalkboard-teacher me-2"></i>Docentes
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-file-signature me-2"></i>Reportes
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-users me-2"></i>Academias
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="fas fa-book me-2"></i>Asignaturas
+    </a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fas fa-cog me-2"></i>Más opciones
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-tools me-2"></i>Configuración
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-envelope me-2"></i>Contacto
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
           </li>
         </ul>
       </div>
