@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de PDF con Encabezado y Pie</title>
+  <link rel="stylesheet" href="CSS - Proyecto/styles.css">
+  <script src="libs/jspdf.umd.min.js"></script>
+  <script src="libs/html2canvas.min.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="selector">
+      <h3>Encabezado</h3>
+      <div class="image-option selected" data-image="encabezado.png" data-type="header">
+        <p>Encabezado</p>
+      </div>
+      <div class="image-option" data-image="blanco" data-type="header">
+        <p>Sin encabezado</p>
+      </div>
+    </div>
+
+    <div class="selector">
+      <h3>Pie de Página</h3>
+      <div class="image-option selected" data-image="pie de pagina.png" data-type="footer">
+        <p>Pie de página</p>
+      </div>
+      <div class="image-option" data-image="blanco" data-type="footer">
+        <p>Sin pie de página</p>
+      </div>
+    </div>
+
+    <button id="generateBtn">Generar PDF</button>
+    <button id="backBtn">Regresar</button>
+  </div>
+
+  <div class="preview-container" id="pdfPage">
+    <img id="headerPreview" class="pdf-header" src="encabezado.png" />
+    <div style="text-align: center; padding: 100px 0; font-size: 20px; color: #333;">
+      Vista previa del contenido del documento
+    </div>
+    <img id="footerPreview" class="pdf-footer" src="pie de pagina.png" />
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const headerOptions = document.querySelectorAll('.image-option[data-type="header"]');
+      const footerOptions = document.querySelectorAll('.image-option[data-type="footer"]');
+      const headerPreview = document.getElementById('headerPreview');
+      const footerPreview = document.getElementById('footerPreview');
+      const generateBtn = document.getElementById('generateBtn');
+      const backBtn = document.getElementById('backBtn');
+      const pdfPage = document.getElementById('pdfPage');
+
+      function updateImage(type, selected) {
+        const options = document.querySelectorAll(`.image-option[data-type="${type}"]`);
+        options.forEach(opt => opt.classList.remove('selected'));
+        selected.classList.add('selected');
+
+        const imageName = selected.getAttribute('data-image');
+        const imgElement = type === 'header' ? headerPreview : footerPreview;
+
+        if (imageName === 'blanco') {
+          imgElement.style.display = 'none';
+        } else {
+          imgElement.src = imageName;
+          imgElement.style.display = 'block';
+        }
+      }
+
+      headerOptions.forEach(option => {
+        option.addEventListener('click', () => updateImage('header', option));
+      });
+
+      footerOptions.forEach(option => {
+        option.addEventListener('click', () => updateImage('footer', option));
+      });
+
+      backBtn.addEventListener('click', () => {
+        window.history.back();
+      });
+
+      generateBtn.addEventListener('click', async () => {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('portrait', 'pt', 'letter');
+
+        await html2canvas(pdfPage, {
+          scale: 2,
+          useCORS: true
+        }).then(canvas => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = pdf.internal.pageSize.getHeight();
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+          pdf.save('documento.pdf');
+          alert("✅ PDF generado con éxito.\nEncabezado y pie de página guardados.");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

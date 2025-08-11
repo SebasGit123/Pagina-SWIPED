@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asignación de Materias y Docentes</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="Fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="CSS - Proyecto/diseño.css">
+</head>
+<body>
+<nav class="navbar navbar-dark navi fixed-top">
+    <div class="container-fluid justify-content-center">
+      <span class="TESCI">ISC || TESCI</span>
+    </div>
+  </nav>
+  <!-- Contenido principal con sidebar y carrusel -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="img/ArchivosDocen.png" alt="Usuario" class="avatar my-3">
+      <ul class="nav flex-column text-primary">
+        <li class="nav-item">
+          <a class="nav-link" href="Administrador Inicio.html">
+        <i class="fas fa-home me-2"></i> Inicio
+         </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Ciencias_Inge.html">
+         <i class="fa-solid fa-gears"></i> Ciencias de la Ingeneria
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Ciencias_Basicas.html">
+        <i class="fas fa-flask me-2"></i> Ciencias Básicas
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Economico_Adminis.html">
+        <i class="fa-solid fa-chart-line"></i> Económico Administrativo
+          </a>
+        </li>
+      </ul>
+      <!-- Submenú -->
+      <ul class="nav flex-column text-primary">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-list-ul"></i>
+            <span class="ms-1">Más opciones</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+               <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-user-lock"></i> Cerrar sesión
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container my-4">
+    <h2 class="text-center mb-4">Academia: Diseño de Ingeneria</h2>
+     <h3 class="text-center">Selecciona la Asignatura a Asignar</h3>
+    <!-- Contenido de la academia seleccionada -->
+    <div class="row my-4">
+      <!-- Docentes y materias -->
+      <div class="col-md-5 custom-border">
+        <div class="section-title">Docentes disponibles:</div>
+        <table class="table table-sm table-bordered">
+          <thead><tr><th>Docente</th></tr></thead>
+          <tbody>
+            <tr><td>Mtra. Laura Rodríguez Maya</td></tr>
+            <tr><td>Prof. Guillermo González Peñaran</td></tr>
+            <tr><td>Prof. Elva Bernal Rodríguez</td></tr>
+            <tr><td>Prof. Marcos Salinas Badillo</td></tr>
+          </tbody>
+        </table>
+
+        <div class="section-title mt-4">Materias disponibles:</div>
+        <table class="table table-sm table-bordered">
+          <thead><tr><th>Clave</th><th>Materia</th></tr></thead>
+          <tbody>
+            <tr><td>ACA-0909</td><td>Taller de investigación I</td></tr>
+            <tr><td>ACA-0910</td><td>Taller de Investigación II</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Selectores para asignar -->
+        <form class="mt-4">
+          <div class="mb-3">
+            <label class="form-label">Selecciona Docente:</label>
+            <select class="form-select">
+              <option>Prof. Laura Rodríguez Maya</option>
+              <option>Prof. Guillermo González Peñaran</option>
+              <option>Prof. Alejandro Rafael Ramírez Zavala</option>
+              <option>Prof. Marcos Salinas Badillo</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Selecciona Materia:</label>
+            <select class="form-select">
+              <option>ACA-0910 - Taller de investigación I</option>
+              <option>ACA-0909 - Taller de Investigación II</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Asignar</button>
+        </form>
+      </div>
+      <!-- Docentes asignados -->
+      <div class="col-md-7 custom-border">
+        <div class="section-title">Docentes asignados:</div>
+        <table class="table table-sm table-bordered">
+          <thead><tr><th>Docente</th><th>Clave</th><th>Materia asignada</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Laura Rodríguez Maya</td>
+              <td>ACA-0910</td>
+              <td>Taller de Investigación II</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Botones de acción -->
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+        <form action="#" method="post" class="d-inline">
+          <button type="submit" name="borrar" class="btn btn-danger">Borrar</button>
+        </form>
+        <form action="#" method="post" class="d-inline">
+          <button type="submit" name="guardar" class="btn btn-success">Guardar y confirmar</button>
+        </form>
+        <a href="Administrador Inicio.html" class="btn custom-btn-color">Volver al menú</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+body {
+  background-color: #f3f4f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 5%;
+  margin: 0%;
+}
+
+:root {
+  --Titulo: "Quicksand", sans-serif;
+  --Fondo: #213555;
+  --Blanco: #fff;
+}
+
+.logoZ {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+.navi {
+  background-color: var(--Fondo);
+}
+
+.TESCI {
+  color: var(--Blanco);
+  font-family: var(--Titulo);
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  border: none;
+  margin-right: 1rem;
+}
+
+.offcanvas-title {
+  font-family: var(--Titulo);
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff; /* blanco dentro del offcanvas oscuro */
+}
+
+.nav-link:hover {
+  color: #ddd; /* más claro al pasar cursor */
+}
+.offcanvas {
+  background-color: #213555; /* mismo color que la navbar, opcional */
+}
+.btn-secondary {
+  font-family: var(--Texto);
+  font-size: 1rem;
+}
+
+aside {
+  background-color: #f8f9fa;
+}
+
+aside h5 {
+  font-family: var(--Titulo);
+}
+
+aside .nav-link {
+  color: #333;
+  font-family: var(--Texto);
+}
+
+aside .nav-link:hover {
+  background: #213555;
+  color: #fff;
+}
+    

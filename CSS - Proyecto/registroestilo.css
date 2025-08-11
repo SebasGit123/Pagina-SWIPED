@@ -1,0 +1,99 @@
+ body {
+  background-color: #f5f7fa;
+  margin: 0;
+  padding-top: 70px; /* espacio para navbar fija */
+}
+
+:root {
+  --Titulo: "Quicksand", sans-serif;
+  --Fondo: #213555;
+  --Blanco: #fff;
+}
+
+.logoZ {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+.navi {
+  background-color: var(--Fondo);
+}
+
+.TESCI {
+  color: var(--Blanco);
+  font-family: var(--Titulo);
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  border: none;
+  margin-right: 1rem;
+}
+
+.offcanvas-title {
+  font-family: var(--Titulo);
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff; /* blanco dentro del offcanvas oscuro */
+}
+
+.nav-link:hover {
+  color: #ddd; /* más claro al pasar cursor */
+}
+.offcanvas {
+  background-color: #213555; /* mismo color que la navbar, opcional */
+}
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 56px; /* ajusta según altura del navbar */
+  left: 0;
+  height: 100%;
+  padding-top: 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.main-content {
+  margin-left: 250px; /* igual que el ancho de la sidebar */
+  padding: 2rem;
+}
+.form-container {
+  background-color: #213555;
+      color: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .form-control::placeholder {
+      color: #ccc;
+    }
+
+    .center-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 70px); /* 100% height minus navbar */
+      padding: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 20px;
+    }

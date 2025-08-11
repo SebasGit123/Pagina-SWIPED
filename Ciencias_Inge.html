@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Asignación de Materias y Docentes</title>
+  <link rel="stylesheet" href="Fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="CSS - Proyecto/ingeneria.css">
+</head>
+<body>
+  <nav class="navbar navbar-dark navi fixed-top">
+    <div class="container-fluid justify-content-center">
+      <span class="TESCI">ISC || TESCI</span>
+    </div>
+  </nav>
+  <!-- Contenido principal con sidebar y carrusel -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="img/ArchivosDocen.png" alt="Usuario" class="avatar my-3">
+       <ul class="nav flex-column text-primary">
+    <li class="nav-item">
+      <a class="nav-link" href="Administrador Inicio.html">
+        <i class="fas fa-home me-2"></i> Inicio
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Economico_Adminis.html">
+        <i class="fa-solid fa-chart-line"></i> Económico Administrativo
+      </a>
+    </li>
+           <li class="nav-item">
+      <a class="nav-link" href="Ciencias_Basicas.html">
+        <i class="fas fa-flask me-2"></i> Ciencias Básicas
+      </a>
+    </li>
+        <li class="nav-item">
+      <a class="nav-link" href="Diseño.html">
+        <i class="fas fa-drafting-compass me-2"></i> Diseño de Ingeniería
+      </a>
+    </li>
+      </ul>
+      <!-- Submenú -->
+      <ul class="nav flex-column text-primary">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <i class="fa-solid fa-list-ul"></i>
+            <span class="ms-1">Más opciones</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="fa-solid fa-user-lock"></i> Cerrar sesión
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="container my-4">
+    <h2 class="text-center mb-4">Academia: Ciencias de la Ingeniería</h2>
+     <h3 class="text-center">Selecciona la Asignatura a Asignar</h3>
+    <!-- Contenido de la academia seleccionada -->
+    <div class="row my-4">
+      <!-- Docentes y materias -->
+      <div class="col-md-5 custom-border">
+        <div class="section-title">Docentes disponibles:</div>
+        <table class="table table-sm table-bordered">
+          <thead><tr><th>Docente</th></tr></thead>
+          <tbody>
+            <tr><td>Mtro. José Luis Camacho Campero</td></tr>
+            <tr><td>Prof. Marcos Salinas Badillo</td></tr>
+            <tr><td>Prof. Elva Bernal Rodríguez</td></tr>
+            <tr><td>Prof. Jose Juan Santana Ortiz</td></tr>
+          </tbody>
+        </table>
+
+        <div class="section-title mt-4">Materias disponibles:</div>
+        <table class="table table-sm table-bordered">
+          <thead><tr><th>Clave</th><th>Materia</th></tr></thead>
+          <tbody>
+            <tr><td>AED-1286</td><td>Programación Orientada a Objetos</td></tr>
+            <tr><td>AED-1026</td><td>Estructura de Datos</td></tr>
+            <tr><td>SCD-1027</td><td>Tópicos Avanzados de Programación</td></tr>
+            <tr><td>SCC-1010</td><td>Graficación</td></tr>
+          </tbody>
+        </table>
+
+        <!-- Selectores para asignar -->
+        <form class="mt-4">
+          <div class="mb-3">
+            <label class="form-label">Selecciona Docente:</label>
+            <select class="form-select">
+              <option>Mtro. José Luis Camacho Campero</option>
+              <option>Prof. Marcos Salinas Badillo</option>
+              <option>Prof. Elva Bernal Rodríguez</option>
+              <option>Prof. Jose Juan Santana Ortiz</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Selecciona Materia:</label>
+            <select class="form-select">
+              <option>AED-1286 - Programación Orientada a Objetos</option>
+              <option>AED-1026 - Estructura de Datos</option>
+              <option>SCD-1027 - Tópicos Avanzados de Programación</option>
+              <option>SCC-1010 - Graficación</option>
+              <option>AED-1285 - Fundamentos de Programación</option>
+              <option>AEC-1061 - Sistemas Operativos I </option>
+              <option>SCD-1022 - Simulación</option>
+              <option>SCA-1026 - Taller de Sistemas Operativos</option>
+              <option>SCD-1003 - Arquitectura de Computadoras</option>
+              <option>AEC-1034 - Fundamentos de Telecomunicaciones</option>
+              <option>SCC-1007 - Fundamentos de Ingeniería de Software</option>
+              <option>SCD-1015 - Lenguajes y Autómatas I</option>
+              <option>SCD-1011 - Ingeniería de Software</option>
+              <option>SCC-1014 - Lenguajes de Interfaz</option>
+              <option>SCD-1021 - Redes de Computadoras</option>
+              <option>SCG-1009 - Gestión de Proyectos de Software</option>
+              <option>SCD-1016 - Lenguajes y Autómatas II</option>
+              <option>SCC-1019 - Programación Lógica y Funcional</option>
+              <option>SCC-1012 - Inteligencia Artificial</option> 
+              <option>SCD-1004 - Conmutación y Enrutamiento en Redes de Datos</option>
+              <option>SCC-1023 - Sistemas Programables</option>
+              <option>AEB-1055 - Programación Web</option>
+              <option>SCA-1002 - Administración de Redes</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Asignar</button>
+        </form>
+      </div>
+      <!-- Docentes asignados -->
+      <div class="col-md-7 custom-border">
+        <div class="section-title">Docentes asignados:</div>
+        <table class="table table-sm table-bordered">
+          <thead><tr><th>Docente</th><th>Clave</th><th>Materia asignada</th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Mtro. José Luis Camacho Campero</td>
+              <td>AED-1286</td>
+              <td>Programación Orientada a Objetos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Botones de acción -->
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-between">
+        <form action="#" method="post" class="d-inline">
+          <button type="submit" name="borrar" class="btn btn-danger">Borrar</button>
+        </form>
+        <form action="#" method="post" class="d-inline">
+          <button type="submit" name="guardar" class="btn btn-success">Guardar y confirmar</button>
+        </form>
+        <a href="Administrador Inicio.html" class="btn custom-btn-color">Volver al menú</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

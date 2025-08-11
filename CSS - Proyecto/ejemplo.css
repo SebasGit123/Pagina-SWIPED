@@ -1,0 +1,130 @@
+:root {
+    --Titulo: "Quicksand", sans-serif;
+    --Fondo: #213555;
+    --Blanco: #fff;
+    --Rojo: #e63946;
+    --AzulOscuro: #1d3557;
+    --AzulClaro: #457b9d;
+    --Celeste: #a8dadc;
+    --GrisClaro: #f1faee;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+}
+
+.logoZ {
+    width: 3rem;
+    height: 3rem;
+}
+
+.navi {
+    background-color: var(--Fondo);
+}
+
+.TESCI {
+    color: var(--Blanco);
+    font-family: var(--Titulo);
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.fixed-top-space {
+    margin-top: 70px;
+}
+
+/* Sidebar izquierda */
+.sidebar-left {
+    background-color: var(--Blanco);
+    height: calc(100vh - 70px);
+    position: fixed;
+    left: 0;
+    width: 16.666667%;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.sidebar-left .nav-link {
+    color: var(--AzulOscuro);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.sidebar-left .nav-link:hover {
+    background-color: var(--Fondo);
+    color: var(--Blanco);
+    border-radius: 5px;
+}
+
+/* Sidebar derecha */
+.sidebar-right {
+    background-color: var(--Blanco);
+    height: calc(100vh - 70px);
+    position: fixed;
+    right: 0;
+    width: 16.666667%;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+}
+
+.sidebar-header {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--Fondo);
+}
+
+.divider {
+    height: 2px;
+    background-color: var(--Fondo);
+    margin: 1rem 0;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 16.666667%;
+    margin-right: 16.666667%;
+    padding: 2rem;
+    background-color: var(--GrisClaro);
+}
+
+.search-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group-text {
+    background-color: var(--Fondo);
+    color: var(--Blanco);
+}
+
+.btn-delete {
+    background-color: var(--Rojo);
+    color: var(--Blanco);
+    border: none;
+}
+
+.folders-container {
+    background-color: var(--Blanco);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.folder-card {
+    background-color: var(--Blanco);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.folder-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--Fondo);
+}
+.folder-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,198 @@
+body {
+  background: linear-gradient(to right, #e6f0ff, #f9f9f9);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+:root {
+  --azulOscuro: #213555;
+  --azulClaro: #3f5185;
+  --blanco: #fff;
+  --sombra: 0 10px 25px rgba(0, 0, 0, 0.1);
+  --radio: 15px;
+}
+
+.logoZ {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+.navi {
+  background-color: var(--azulOscuro);
+}
+
+.TESCI {
+  color: var(--blanco);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  border: none;
+  margin-right: 1rem;
+}
+
+.offcanvas {
+  background-color: var(--azulOscuro);
+}
+
+.offcanvas-title {
+  font-family: 'Poppins', sans-serif;
+  color: var(--blanco);
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #cbd4ff;
+}
+
+/* Login container */
+.container-login {
+  background: #fff;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+  max-width: 1000px;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 120px;
+}
+
+/* Left section: form */
+.form-section {
+  flex: 1;
+  padding: 50px 40px;
+  background-color: #fff;
+}
+
+.form-section h2 {
+  color: var(--azulOscuro);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.form-section p {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.form-section .form-select,
+.form-section .form-control {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.form-section .btn-primary {
+  background-color: var(--azulOscuro);
+  border: none;
+  border-radius: 30px;
+  padding: 12px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.form-section .btn-primary:hover {
+  background-color: var(--azulClaro);
+}
+
+.options {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.options a {
+  text-decoration: none;
+  color: var(--azulOscuro);
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+/* Right section: welcome */
+.welcome-section {
+  flex: 1;
+  background: var(--azulOscuro);
+  color: var(--blanco);
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: var(--radio);
+  border-bottom-right-radius: var(--radio);
+}
+
+.welcome-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.welcome-section p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-login {
+    flex-direction: column;
+  }
+
+  .welcome-section {
+    border-radius: 0 0 var(--radio) var(--radio);
+  }
+}
+.role-page {
+  background: #fff;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra);
+  padding: 50px;
+  max-width: 1000px;
+  width: 90%;
+  margin: 120px auto 0;
+  display: none;
+}
+
+.role-page h1 {
+  color: var(--azulOscuro);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.role-page p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.back-to-login {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--azulOscuro);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-login:hover {
+  background-color: var(--azulClaro);
+  color: white;
+}

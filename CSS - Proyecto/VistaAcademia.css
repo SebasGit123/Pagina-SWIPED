@@ -1,0 +1,158 @@
+ :root {
+      --Titulo: "Quicksand", sans-serif;
+      --Fondo: #213555;
+      --Blanco: #fff;
+    }
+
+    body {
+      margin: 0;
+      padding-top: 4rem;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f1f2f6;
+    }
+
+    .logoZ {
+      width: 3rem;
+      height: 3rem;
+      margin-left: 1rem;
+    }
+
+    .navi {
+      background-color: var(--Fondo);
+    }
+
+    .TESCI {
+      color: var(--Blanco);
+      font-family: var(--Titulo);
+      font-size: 1.8rem;
+      margin-left: 1rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .navbar-toggler {
+      border: none;
+      margin-right: 1rem;
+    }
+
+    .offcanvas-title {
+      font-family: var(--Titulo);
+    }
+
+    .nav-link {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .nav-link:hover {
+      color: #ddd;
+    }
+
+    .offcanvas {
+      background-color: #213555;
+    }
+
+    /* Perfil Sidebar */
+    .perfil-sidebar {
+      background: #fff;
+      border-right: 1px solid #ddd;
+      padding: 20px 10px;
+    }
+
+    .perfil-foto {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    /* Sidebar derecha Áreas */
+    .sidebar-derecha {
+      background: #fff;
+      border-left: 1px solid #ddd;
+      padding: 20px 10px;
+    }
+
+    /* Botón Volver al menú */
+    .btn-primary {
+      background-color: #213555;
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a2c44;
+    }
+
+    .btn-outline-primary {
+      border-color: #213555;
+      color: #213555;
+    }
+
+    .btn-outline-primary:hover {
+      background-color: #213555;
+      color: #fff;
+    }
+
+    .btn-outline-secondary {
+      border-color: #6c757d;
+      color: #6c757d;
+    }
+
+    .btn-outline-secondary:hover {
+      background-color: #6c757d;
+      color: #fff;
+    }
+
+    .fixed-top-space {
+      margin-top: 70px;
+    }
+
+    .folder-icon {
+      width: 80px;
+      height: 80px;
+    }
+
+    .folder-container {
+      text-align: center;
+      margin: 15px 0;
+    }
+
+    .main-content {
+      position: relative;
+      min-height: 80vh;
+      padding-bottom: 60px;
+    }
+
+    .btn-delete {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    .hover-container {
+      display: flex;
+      justify-content: center;
+      margin: 40px auto 10px;
+    }
+
+    .explosive-text {
+      display: inline-block;
+      overflow: hidden;
+      border-right: 2px solid #213555;
+      white-space: nowrap;
+      letter-spacing: 0.15em;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+      font-size: 2.2rem;
+      font-family: var(--Titulo);
+      color: #213555;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #213555; }
+    }

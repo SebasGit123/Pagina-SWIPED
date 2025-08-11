@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Configuración de Perfil</title>
+  <link rel="stylesheet" href="ArchivosDocen.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="CSS - Proyecto/Perfilestilo.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark navi fixed-top">
+    <div class="container-fluid justify-content-center">
+      <span class="TESCI">ISC || TESCI</span>
+    </div>
+  </nav>
+  <!-- Contenido principal con sidebar y carrusel -->
+  <div class="main-content">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="img/ArchivosDocen.png" alt="Usuario" class="avatar my-3">
+      <ul class="nav flex-column text-primary">
+        <li class="nav-item">
+          <a class="nav-link" href="Administrador Inicio.html">
+            <img src="img/inicio1.png" width="20" height="20"> <span class="ms-1">Inicio</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Ciencias_Inge.html">
+            <img src="img/instru1.png" width="20" height="20"> <span class="ms-1">Ciencias de la Ingeneria</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Ciencias_Basicas.html">
+            <img src="img/docentes1.png" width="20" height="20"> <span class="ms-1">Ciencias Basicas</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Diseño.html">
+            <img src="img/academia1.png" width="20" height="20"> <span class="ms-1">Diseño de ingeneria</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">
+            <img src="img/asig1.png" width="20" height="20"> <span class="ms-1">Asignaturas</span>
+          </a>
+        </li>
+      </ul>
+      <!-- Submenú -->
+      <ul class="nav flex-column text-primary">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            <img src="img/opcion1.png" width="20" height="20">
+            <span class="ms-1">Más opciones</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" href="#">
+                <img src="img/conf1.png" width="20" height="20"> Configuración
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <img src="img/cont1.png" width="20" height="20"> Contacto
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <img src="img/salir1.png" width="20" height="20"> Cerrar sesión
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  <!-- Contenido Principal -->
+  <main class="container">
+    <h3 class="fw-bold mb-4 text-center">Configuración de Perfil</h3>
+    <div class="d-flex flex-column align-items-center mb-4">
+      <img src="https://i.pravatar.cc/200" class="rounded mb-3" alt="Foto de perfil" width="180" />
+      <button class="btn btn-outline-primary w-auto">Subir una foto</button>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Nombre</label>
+            <input type="text" class="form-control" value="gene.rodrig" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" value="Gene" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Rol</label>
+            <select class="form-select">
+              <option selected>Jefe de Carrera</option>
+              <option>Docente</option>
+              <option>Jefe de Academia</option>
+            </select>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Apellidos</label>
+            <input type="text" class="form-control" value="Rodriguez" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Email (required)</label>
+            <input type="email" class="form-control" value="gene.rod@gmail.com" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label">Número de Control</label>
+            <input type="text" class="form-control" value="@gene-rod" />
+          </div>
+        </div>
+        <!-- Cambio de contraseña -->
+        <hr class="my-4">
+        <h5 class="mb-3">Cambiar Contraseña</h5>
+        <div class="mb-3">
+          <label class="form-label">Antigua Contraseña</label>
+          <input type="password" class="form-control" />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Nueva Contraseña</label>
+          <input type="password" class="form-control" />
+        </div>
+        <button class="btn btn-secondary mb-4">Cambiar Contraseña</button>
+        <!-- Botones finales -->
+        <div class="d-flex justify-content-start">
+          <button class="btn btn-primary">Actualizar Perfil</button>
+          <button onclick="location.href='Administrador Inicio.html'" class="btn btn-secondary">Volver al Menú Principal</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
