@@ -1,0 +1,166 @@
+:root{
+--Titulo: "Quicksand", sans-serif;
+--Texto:"Raleway", sans-serif;
+--Alertas:"Roboto Condensed", sans-serif;
+
+--fondo: rgba(33, 53, 85,1);
+--contenedores: #3E5879;
+--navegadores: #030202;
+--delineados: #F5EFE7;
+--blanco: #fff;
+--negro: #000;
+--rojo: #e82f2f;
+--verde: #537D5D; 
+}
+
+
+
+body{
+    text-align: justify;   
+}
+
+ /* BOTONES */
+
+    /* Boton volver a inicio */
+  .css-button-arrow--black {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  overflow: hidden;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--fondo)
+}
+.css-button-arrow--black:hover {
+  border-radius: 5px;
+  padding-right: 24px;
+  padding-left:8px;
+}
+.css-button-arrow--black:hover:after {
+  opacity: 1;
+  right: 10px;
+}
+.css-button-arrow--black:after {
+  content: "\00BB";
+  position: absolute;
+  opacity: 0;
+  font-size: 20px;
+  line-height: 40px;
+  top: 0;
+  right: -20px;
+  transition: 0.4s;
+}
+
+/* Boton amarillo */
+.css-button-rounded--yellow {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid rgba(223, 188, 11, 0.705);
+  background: rgba(223, 188, 11, 0.705);
+}
+.css-button-rounded--yellow:hover {
+  background: rgba(255, 255, 255, 0.544);
+  color: rgba(223, 188, 11, 0.705)
+}
+
+/* Boton azul */
+.css-button-rounded--blue {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid var(--fondo);
+  background: var(--fondo);
+}
+.css-button-rounded--blue:hover {
+  background: #fff;
+  color: var(--fondo);
+}
+
+/* Boton rojo */
+.css-button-rounded--red {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid #d90429;
+  background: #d90429;
+}
+.css-button-rounded--red:hover {
+  background: #fff;
+  color: #d90429
+}
+
+/* Boton verde */
+.css-button-rounded--green {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: 2px solid rgb(4, 165, 63);
+  background: rgb(4, 165, 63);
+}
+.css-button-rounded--green:hover {
+  background: #fff;
+  color: rgb(4, 165, 63)
+}
+
+/* BOTON GRIS */
+
+.css-button-sharp--sand {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 2px solid #adb5bd;
+  background: #adb5bd;
+}
+.css-button-sharp--sand:hover {
+  background: #fff;
+  color: #adb5bd
+}
+
+/* BOTONES PARA CRUD */

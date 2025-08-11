@@ -1,0 +1,54 @@
+
+
+.h1{
+font-family: "Quicksand", sans-serif; 
+ 
+}
+
+.raleway-text {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.quicksand-title {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300px;
+  font-style: normal;
+  font-size: 50px;
+}
+
+:root{
+  --QuickSandText:"Quicksand", sans-serif;
+}
+
+.quicksand-subtitle {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 30px;
+  font-style: normal;
+  font-size: 20px;
+}
+
+
+
+.roboto-condensed-warnings {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 1rem;
+  font-style: normal;
+}
+
+
+
+
+
+
+/*
+Titulos: QuickSand
+Texto: Raleway
+Alertas: Roboto Condesed
+*/

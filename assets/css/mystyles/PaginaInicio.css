@@ -1,0 +1,417 @@
+:root {
+  --Titulo: "Quicksand", sans-serif;
+  --Texto: "Raleway", sans-serif;
+  --Alertas: "Roboto Condensed", sans-serif;
+  --fondo: rgba(33, 53, 85,1);
+  --contenedores: #3E5879;
+  --navegadores: rgba(255, 255, 255, 0.5);
+  --delineados: #F5EFE7;
+  --blanco: #fff;
+  --negro: #000;
+  --rojo: #e82f2f;
+  --verde: #537D5D;
+}
+
+
+body{
+    padding-top: 7%;
+    overflow-x: hidden;
+}
+/* FUENTES TEXTO */
+body, p, li, ul, ol, .raleway-text {
+  font-family: var(--Texto);
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* FUENTES TITULO */
+h1, h2, h3, h4, h5, h6, .quicksand-title, .TESCI {
+  font-family: var(--Titulo);
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+.quicksand-title {
+  font-size: 50px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+.quicksand-subtitle {
+  font-family: var(--Titulo);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Clase para alertas o advertencias */
+.roboto-condensed-warnings {
+  font-family: var(--Alertas);
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* BARRA DE NAVEGACION */
+.bodM {
+  min-height: 100vh;
+}
+
+.logoZ {
+  width: 4rem;
+  height: 4rem;
+  margin-left: 1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navi {
+  min-height: 3rem;
+  background-color: var(--fondo);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-top: 0%;
+  z-index: 1000;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  color: var(--navegadores);
+  font-family: var(--Titulo);
+  text-decoration: none;
+  padding: 1rem;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+  margin-left: 1rem;
+}
+
+.nav-link:hover {
+  color: var(--fondo);
+  background-color: var(--navegadores);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(16, 16, 16, 0.15);
+}
+
+/* Título ISC || TESCI */
+.TESCI {
+  color: #fff;
+  font-family: var(--Titulo);
+  font-size: 2rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+/* BARRA DE NAVEGACION */
+
+/*CSS para el Carrousel*/
+.carousel-image {
+  height: 500px;
+  width: 90%;
+  max-width: 90%;
+  margin: 0 auto;
+  border-radius: 2rem;
+}
+
+#carouselExampleCaptions {
+  width: 90%;
+  max-width: 95%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 2rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  width: 15%;
+  height: auto;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 93, 255);
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+/* RECUADRO TRANSPARENTE CONTACTOS */
+
+
+.cuadro-transparente {
+  width: 90%;
+  height: 150px;
+  background-color: var(--colorC--);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dotted black;
+  text-align: left;
+  font-size: 10px;
+  margin: 0 auto;
+  margin-bottom:10% ;
+}
+
+.alingHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.alingHeader h4 {
+  text-align: center;
+  width: 50%;
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.cards {
+  grid-auto-rows: max-content;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 1.5rem; /* Espacio entre cartas */
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  background-color: var(--colorC--);
+  border: 2px solid #000000;
+  border-radius: 10px;
+  box-shadow: 4px 4px 90px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+}
+
+.card {
+  width: 80%;      /* Ocupa todo el ancho de la columna */
+  min-width: 0%;     /* Permite que se reduzca si es necesario */
+  box-sizing: border-box;
+}
+
+.encabezado-linea {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+
+.card-container {
+    width: 75%;
+    height: 15rem;
+    perspective: 1000px;
+    margin: 50px auto;
+    aspect-ratio: unset;
+}
+
+.card-title{
+    font-family: var(--Titulo);
+    font-size: 1.5rem;
+    color: var(--negro);
+    text-align: center;
+    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.card-text{
+  margin-top: 1rem;
+  font-family: var(--Texto);
+  text-align: justify;
+  flex-grow: 1; /* hace que el texto use el espacio disponible */
+  margin-bottom: 1rem;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    transform-style: preserve-3d; 
+    transition: transform 0.8s ease-in-out; 
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 12rem;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;      /* Botón abajo */
+    align-items: center;            /* Centra horizontalmente */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+.btn {
+  background-color: var(--fondo);
+  color: var(--blanco);
+  border: double;
+  padding: 8px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: var(--Titulo);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: auto;           /* Solo el ancho necesario */
+  margin-bottom: 16px;   /* Espacio inferior opcional */
+}
+
+
+.card-face img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    
+}
+
+
+.card-front {
+    transform: rotateY(0deg);
+    background-color: #f0f0f0;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    background-color: #e0e0e0;
+}
+
+.card-container:hover .card {
+    transform: rotateY(180deg);
+    rotate: -2deg; 
+    
+}
+
+
+.art {
+  width: 90%;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra opcional */
+}
+.art1{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  place-items: center;
+  
+}
+
+.div1 { }
+.div2 { }
+.div3 { }
+.div4 { }
+.div5 { }
+.div6 { }
+.div7 { }
+.div8 { }
+.div9 { }
+.div10 { }
+
+.links {
+  text-decoration: none;
+  color: var(--contenedores);
+  font-family: var(--Titulo);
+  font-size: 1.2rem;
+  transition: all 0.3s ease; /* Añadido 'ease' para suavizar la animación */
+  text-shadow: -1px -1px 0 var(--navegadores), 
+                1px -1px 0 var(--navegadores), 
+               -1px 1px 0 var(--navegadores), 
+                1px 1px 0 var(--navegadores);
+  display: inline-block; /* Esto evita saltos de línea al hacer hover */
+}
+
+.links:hover { /* Faltaba el punto antes de 'links' */
+  color: var(--fondo);
+  text-decoration: dotted;
+  font-size: 1.5rem; /* 2rem es un salto muy grande, ajusté a 1.5rem */
+  text-shadow: -2px -2px 0 var(--navegadores), 
+                2px -2px 0 var(--navegadores), 
+               -2px 2px 0 var(--navegadores), 
+                2px 2px 0 var(--navegadores); /* Aumentar sombra proporcionalmente */
+}
+
+
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: #343a40;
+      padding-top: 1rem;
+    }
+    .sidebar a {
+      color: #fff;
+      text-decoration: none;
+      display: block;
+      padding: 10px 15px;
+      transition: background 0.3s;
+    }
+    .sidebar a:hover {
+      background-color: #495057;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        left: -250px;
+        transition: left 0.3s;
+      }
+      .sidebar.active {
+        left: 0;
+      }
+      .content {
+        margin-left: 0;
+      }
+    }
+
+    .linkNav{
+      font-size: 1.2rem;
+      color: var(--blanco);
+      font-family: var(--Titulo);
+      text-decoration: none;
+      padding: 1rem;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+      margin-left: 1rem;
+    }
+/*
+Titulos: QuickSand
+Texto: Raleway
+Alertas: Roboto Condensed
+*/
