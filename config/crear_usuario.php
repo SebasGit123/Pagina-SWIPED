@@ -1,0 +1,50 @@
+<?php
+require_once 'conexion.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombre = $_POST['nameD'];
+    $usuario = $_POST['username'];
+    $correo = $_POST['email'];
+    $rol = $_POST['rol'];
+    $contrasena = $_POST['password'];
+    $confirmar_contrasena = $_POST['password_confirm'];
+
+    // Validar contraseñas
+    if ($contrasena !== $confirmar_contrasena) {
+        header("Location: ../jefatura/pruebas.php?error=Las contraseñas no coinciden");
+        exit();
+    }
+
+    // Verificar usuario existente
+    $stmt_check = $conexion->prepare("SELECT id FROM registrodocente WHERE username = ? OR email = ?");
+    $stmt_check->bind_param("ss", $usuario, $correo);
+    $stmt_check->execute();
+    $stmt_check->store_result();
+
+    if ($stmt_check->num_rows > 0) {
+        header("Location: ../jefatura/pruebas.php?error=El usuario o correo ya existe");
+        exit();
+    }
+    $stmt_check->close();
+
+    // Insertar nuevo usuario
+    $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
+    
+    $stmt = $conexion->prepare("INSERT INTO registrodocente (nameD, username, email, password, rol) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("sssss", $nombre, $usuario, $correo, $hashed_password, $rol);
+
+    if ($stmt->execute()) {
+        header("Location: ../jefatura/pruebas.php?success=Usuario creado exitosamente");
+        exit();
+    } else {
+        header("Location: ../jefatura/pruebas.php?error=" . urlencode($stmt->error));
+        exit();
+    }
+
+    $stmt->close();
+    $conexion->close();
+} else {
+    header("Location: ../jefatura/pruebas.php");
+    exit();
+}
+?>

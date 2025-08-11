@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Usuario - ISC TESCI</title>
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="css/mystyles/archivos.css">
-    <link rel="stylesheet" href="css/mystyles/ar.css">
-    <link rel="stylesheet" href="css/mystyles/global.css">
+    <link rel="stylesheet" href="../assets/css/mystyles/global.css">
+    <link rel="stylesheet" href="../assets/css/mystyles/archivos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark navi">
   <div class="container-fluid">
-    <img src="img/logo.png" class="logoZ">
+    <img src="../assets/img/logo.png" class="logoZ">
     <a class="navbar-brand">ISC || TESCI</a>
   </div>
 </nav>
@@ -26,7 +25,7 @@
         <div class="sidebar">
             <div class="user-info">
                 <div class="user-avatar">
-                    <img src="img/perfil.jpg" alt="Avatar">
+                    <img src="../assets/img/perfil.jpg" alt="Avatar">
                 </div>
                 <h2 class="user-name">Ing. Roberto Gomez</h2>
                 <p class="user-degree"><small>Division :</small>Ingeniería en sistemas computacionales</p>
@@ -40,7 +39,7 @@
              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Materias asignadas</button>
               
-            <button class="css-button-rounded--red espaciado" onclick="location.href='INDEX.html'">
+            <button class="css-button-rounded--red espaciado" onclick="location.href=''">
                 <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
             </button>
             </div>
@@ -144,7 +143,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
-        <iframe src="rubricaEjemplo.pdf" frameborder="0" class="pdf-iframe"></iframe>
+        <iframe src="../assets/pdfs/rubricaEjemplo.pdf" frameborder="0" class="pdf-iframe"></iframe>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -205,6 +204,6 @@
 
 
 
-
+<script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

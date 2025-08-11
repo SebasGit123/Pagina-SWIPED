@@ -116,7 +116,21 @@ body {
   z-index: 100;
 }
 
+/* Estilos para la tabla */
 .table-responsive {
-  border-collapse: separate;
-  border-spacing: 0;
+    overflow-x: auto;
+}
+
+.password-cell {
+    color: #6c757d;
+}
+
+.actions-cell {
+    white-space: nowrap;
+    min-width: 120px;
+}
+
+.btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
 }
