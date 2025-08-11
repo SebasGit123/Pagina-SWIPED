@@ -257,46 +257,106 @@ th.num {
 }
 
 /* ------------------------------
-   ESTILOS PARA IMPRESIÓN
+   ESTILOS MEJORADOS PARA IMPRESIÓN
 --------------------------------*/
 @media print {
   @page {
-    size: landscape; /* Orientación horizontal */
-    margin: 1cm;     /* Márgenes pequeños para aprovechar la hoja */
+    size: A4 landscape; /* Especificar tamaño A4 en horizontal */
+    margin: 0.5cm;      /* Reducir márgenes para aprovechar espacio */
   }
 
   body {
     padding: 0 !important;
     margin: 0 !important;
-    width: 100%;
+    width: 100% !important;
+    font-size: 12pt !important; /* Tamaño de fuente estándar para impresión */
+    line-height: 1.2 !important;
+    color: #000 !important;
+    background: #fff !important;
   }
 
-  /* Evitar cortes en medio de contenedores/tablas */
-  .container, .card, .apartado-text, table, tr, td, th {
+  /* Asegurar que los contenedores principales usen todo el ancho */
+  .container, .card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Optimización específica para tablas */
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    border-collapse: collapse !important;
     page-break-inside: avoid !important;
     break-inside: avoid !important;
+    font-size: 10pt !important; /* Reducir tamaño de fuente en tablas */
   }
 
-  /* Ocultar barra de navegación, botones y elementos con clase no-print */
-  .navi,
-  .btn,
-  .table-controls,
-  .no-print {
+  th, td {
+    padding: 4px 6px !important;
+    border: 1px solid #ddd !important;
+    text-align: left !important;
+    vertical-align: top !important;
+  }
+
+  th {
+    background-color: #f2f2f2 !important;
+    font-weight: bold !important;
+  }
+
+  /* Ajustes para tablas editables */
+  .editable-table td[contenteditable="true"] {
+    background-color: transparent !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+  }
+
+  /* Ajustes para áreas de texto */
+  .auto-resize-textarea, .textA {
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 2px 4px !important;
+    font-size: 10pt !important;
+  }
+
+  /* Ocultar elementos no necesarios en impresión */
+  .navi, .btn, .table-controls, .no-print,
+  .form-select, .nav-link, .logoZ {
     display: none !important;
   }
 
-  /* Ajustar tablas para ocupar todo el ancho */
-  .table {
-    font-size: 14px;
-    width: 100%;
+  /* Mantener estilos para títulos importantes */
+  .TESCI, h1, h2, h3 {
+    color: #000 !important;
+    page-break-after: avoid !important;
   }
 
-  table {
-    border-collapse: collapse;
-    width: 100%;
+  /* Evitar saltos de página no deseados */
+  .apartado-text, .apartados, .divClave {
+    page-break-inside: avoid !important;
   }
 
-  table th, table td {
-    padding: 6px;
+  /* Ajustar selectores específicos de tu contenido */
+  .porcentajes {
+    width: auto !important;
+    height: auto !important;
+    padding: 2px 4px !important;
+    border: 1px solid #ddd !important;
+  }
+
+  /* Calendario de evaluación */
+  .calendario-evaluacion {
+    font-size: 8pt !important;
+  }
+  
+  .calendario-evaluacion th, 
+  .calendario-evaluacion td {
+    padding: 2px !important;
+    min-width: 30px !important;
   }
 }
