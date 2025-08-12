@@ -1,144 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Actualizaciond de Encabezados</title>
+  <meta charset="UTF-8">
+  <title>Generador de PDF con Encabezado y Pie</title>
+  <link rel="stylesheet" href="../assets/css/mystyles/styles.css">
+  <script src="libs/jspdf.umd.min.js"></script>
+  <script src="libs/html2canvas.min.js"></script>
 </head>
-<style>
-	@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
-		
-		body {
-			margin: 0;
-			height: 100vh;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			background-color: black;
-			overflow: hidden;
-			font-family: 'Fira Mono', monospace;
-		}
-		
-		/* Estilos para el texto glitch */
-		.glitch-container {
-			margin-bottom: 100px; /* Espacio entre el texto y la animación */
-			text-align: center;
-		}
-		
-		.glitch-text {
-			color: #fff;
-			font-size: 96px;
-			letter-spacing: -7px;
-			position: relative;
-			animation: glitch 1s linear infinite;
-		}
-		
-		@keyframes glitch {
-			2%,64% { transform: translate(2px,0) skew(0deg); }
-			4%,60% { transform: translate(-2px,0) skew(0deg); }
-			62% { transform: translate(0,0) skew(5deg); }
-		}
-		
-		.glitch-text:before,
-		.glitch-text:after {
-			content: attr(title);
-			position: absolute;
-			left: 0;
-			width: 100%;
-		}
-		
-		.glitch-text:before {
-			animation: glitchTop 1s linear infinite;
-			clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-			-webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-		}
-		
-		@keyframes glitchTop {
-			2%,64% { transform: translate(2px,-2px); }
-			4%,60% { transform: translate(-2px,2px); }
-			62% { transform: translate(13px,-1px) skew(-13deg); }
-		}
-		
-		.glitch-text:after {
-			animation: glitchBotom 1.5s linear infinite;
-			clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-			-webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-		}
-		
-		@keyframes glitchBotom {
-			2%,64% { transform: translate(-2px,0); }
-			4%,60% { transform: translate(-2px,0); }
-			62% { transform: translate(-22px,5px) skew(21deg); }
-		}
-		
-		/* Estilos para la animación de cuadrados giratorios */
-		.loader-container {
-			position: relative;
-			height: 300px;
-		}
-		
-		.loader, .loader span {
-			width: 10em;
-			height: 10em;
-			border: 0.25em solid white;
-			font-size: 10px;
-			border-radius: 1em;
-			position: absolute;
-			mix-blend-mode: screen;
-		}
-		
-		.loader {
-			background-color: gold;
-			animation: rotating 2s linear infinite;
-		}
-		
-		@keyframes rotating {
-			to { transform: rotate(1turn); }
-		}
-		
-		.loader span {
-			animation: de-rotating 4s linear infinite;
-		}
-		
-		@keyframes de-rotating {
-			from, to { transform: rotate(0deg) scale(0.5); }
-			50% { transform: rotate(-180deg) scale(1.2); }
-		}
-		
-		.loader span:nth-child(1) {
-			top: 5em;
-			left: 5em;
-			background-color: dodgerblue;
-		}
-		
-		.loader span:nth-child(2) {
-			top: -5em;
-			left: 5em;
-			background-color: hotpink;
-		}
-		
-		.loader span:nth-child(3) {
-			top: 5em;
-			left: -5em;
-			background-color: mediumpurple;
-		}
-		
-		.loader span:nth-child(4) {
-			top: -5em;
-			left: -5em;
-			background-color: limegreen;
-		}
-</style>
 <body>
-	<div class="glitch-container">
-		<div class="glitch-text" title="Actualización">404</div>
- <div class="loader"> 
-<span></span>
-<span></span>
-<span></span>
-<span></span>
-<span></span> 
- </div>
+
+  <div class="sidebar">
+    <div class="selector">
+      <h3>Encabezado</h3>
+      <div class="image-option selected" data-image="../assets/img/encabezado.png" data-type="header">
+        <p>Encabezado</p>
+      </div>
+      <div class="image-option" data-image="blanco" data-type="header">
+        <p>Sin encabezado</p>
+      </div>
+    </div>
+
+    <div class="selector">
+      <h3>Pie de Página</h3>
+      <div class="image-option selected" data-image="../assets/img/pie de pagina.png" data-type="footer">
+        <p>Pie de página</p>
+      </div>
+      <div class="image-option" data-image="blanco" data-type="footer">
+        <p>Sin pie de página</p>
+      </div>
+    </div>
+
+    <button id="generateBtn">Generar PDF</button>
+    <button id="backBtn">Regresar</button>
+  </div>
+
+  <div class="preview-container" id="pdfPage">
+    <img id="headerPreview" class="pdf-header" src="../assets/img/encabezado.png" />
+    <div style="text-align: center; padding: 100px 0; font-size: 20px; color: #333;">
+      Vista previa del contenido del documento
+    </div>
+    <img id="footerPreview" class="pdf-footer" src="../assets/img/pie de pagina.png" />
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const headerOptions = document.querySelectorAll('.image-option[data-type="header"]');
+      const footerOptions = document.querySelectorAll('.image-option[data-type="footer"]');
+      const headerPreview = document.getElementById('headerPreview');
+      const footerPreview = document.getElementById('footerPreview');
+      const generateBtn = document.getElementById('generateBtn');
+      const backBtn = document.getElementById('backBtn');
+      const pdfPage = document.getElementById('pdfPage');
+
+      function updateImage(type, selected) {
+        const options = document.querySelectorAll(`.image-option[data-type="${type}"]`);
+        options.forEach(opt => opt.classList.remove('selected'));
+        selected.classList.add('selected');
+
+        const imageName = selected.getAttribute('data-image');
+        const imgElement = type === 'header' ? headerPreview : footerPreview;
+
+        if (imageName === 'blanco') {
+          imgElement.style.display = 'none';
+        } else {
+          imgElement.src = imageName;
+          imgElement.style.display = 'block';
+        }
+      }
+
+      headerOptions.forEach(option => {
+        option.addEventListener('click', () => updateImage('header', option));
+      });
+
+      footerOptions.forEach(option => {
+        option.addEventListener('click', () => updateImage('footer', option));
+      });
+
+      backBtn.addEventListener('click', () => {
+        window.history.back();
+      });
+
+      generateBtn.addEventListener('click', async () => {
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF('portrait', 'pt', 'letter');
+
+        await html2canvas(pdfPage, {
+          scale: 2,
+          useCORS: true
+        }).then(canvas => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdfWidth = pdf.internal.pageSize.getWidth();
+          const pdfHeight = pdf.internal.pageSize.getHeight();
+          pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+          pdf.save('documento.pdf');
+          alert("✅ PDF generado con éxito.\nEncabezado y pie de página guardados.");
+        });
+      });
+    });
+  </script>
 </body>
 </html>
