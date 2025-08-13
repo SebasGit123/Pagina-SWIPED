@@ -3,7 +3,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $contrasena = "";
-$basededatos = "gestion_docentes";
+$basededatos = "usuarios";
 
 $conexion = new mysqli($servidor, $usuario, $contrasena, $basededatos);
 

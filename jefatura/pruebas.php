@@ -12,8 +12,8 @@
 </head>
 <body>
 <header class="navbar navbar-expand-lg navbar-dark fixed-top encabezado">
-  <div class="container-fluid d-flex align-items-center justify-content-center">
-    <div class="d-flex align-items-center me-auto">
+  <div class="container-fluid">
+    <div class="d-flex me-auto">
       <button class="navbar-toggler" type="button" id="toggleSidebar">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,7 +22,9 @@
       </a>
     </div>
 
-    <h1 class="NavTit">Sistema Integral ISC</h1>
+    <div class="header-content">
+      <h1 class="NavTit">Sistema Integral ISC</h1>
+    </div>
 
     <div class="ms-auto"></div>
   </div> 
@@ -284,22 +286,29 @@ document.getElementById('formEditar').addEventListener('submit', function(e) {
 <script>
 // Función para cargar datos en el modal de edición
 function cargarDatosEdicion(id) {
-    fetch(`../config/obtener_usuario.php?id=${id}`)
-        .then(response => response.json())
+    // Asegúrate de que la ruta sea correcta
+    fetch(`../config/obtener_usuario.php?id=${id}`) 
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al obtener datos del usuario');
+            }
+            return response.json();
+        })
         .then(data => {
             const emailPrefix = data.email.replace('@cuautitlan.tecnm.mx', '');
-            const form = `
+            // El resto de tu código para generar el formulario HTML es correcto
+            const formHTML = `
                 <input type="hidden" name="id" value="${data.id}">
                 <div class="mb-3">
-                    <label class="form-label">Nombre del docente</label>
+                    <label class="form-label">Nombre completo</label>
                     <input type="text" name="nameD" class="form-control" value="${data.nameD}" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Nombre de usuario</label>
+                    <label class="form-label">Usuario</label>
                     <input type="text" name="username" class="form-control" value="${data.username}" required>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Correo institucional</label>
+                    <label class="form-label">Correo</label>
                     <div class="input-group">
                         <input type="text" name="email_prefix" class="form-control" value="${emailPrefix}" required>
                         <span class="input-group-text">@cuautitlan.tecnm.mx</span>
@@ -307,7 +316,7 @@ function cargarDatosEdicion(id) {
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Rol del usuario</label>
+                    <label class="form-label">Rol</label>
                     <select name="rol" class="form-select" required>
                         <option value="jefatura" ${data.rol === 'jefatura' ? 'selected' : ''}>Jefatura</option>
                         <option value="docente" ${data.rol === 'docente' ? 'selected' : ''}>Docente</option>
@@ -315,11 +324,24 @@ function cargarDatosEdicion(id) {
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Nueva Contraseña (dejar en blanco para no cambiar)</label>
-                    <input type="password" name="password" class="form-control" placeholder="••••••••">
+                    <label class="form-label">Nueva contraseña</label>
+                    <input type="password" name="password" class="form-control" placeholder="Dejar vacío para no cambiar">
+                    <div class="form-text">Mínimo 8 caracteres</div>
                 </div>
             `;
-            document.getElementById('modalEditarBody').innerHTML = form;
+            document.getElementById('modalEditarBody').innerHTML = formHTML;
+            // Asegurar que el correo completo se envíe en el formulario de editar
+            document.getElementById('formEditar').addEventListener('submit', function(e) {
+                const prefix = document.querySelector('#modalEditarBody input[name="email_prefix"]').value.trim();
+                document.getElementById('emailCompleteEdit').value = prefix + '@cuautitlan.tecnm.mx';
+            });
+            // Opcional: mostrar el modal manualmente, en caso de que el `data-bs-target` falle por la recarga del contenido
+            const modalEditar = new bootstrap.Modal(document.getElementById('modalEditar'));
+            modalEditar.show();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('modalEditarBody').innerHTML = `<div class="alert alert-danger">Error: ${error.message}</div>`;
         });
 }
 </script>

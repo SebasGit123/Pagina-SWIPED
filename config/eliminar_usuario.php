@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['id'])) {
         die("Error de conexión: " . $conexion->connect_error);
     }
 
-    $stmt = $conexion->prepare("DELETE FROM registrodocente WHERE id = ?");
+    $stmt = $conexion->prepare("DELETE FROM usuarios_db WHERE id = ?");
     if ($stmt === false) {
         die("Error en la preparación de la consulta: " . $conexion->error);
     }

@@ -2,7 +2,7 @@
 require_once 'conexion.php';
 
 // Consulta de usuarios
-$sql = "SELECT id, nameD, username, email, rol, password FROM registrodocente";
+$sql = "SELECT id, nameD, username, email, rol, password FROM usuarios_db";
 $resultado = $conexion->query($sql);
 
 if ($resultado && $resultado->num_rows > 0) {

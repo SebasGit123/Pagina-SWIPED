@@ -1,3 +1,10 @@
+ <?php
+session_start();
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'docente') {
+    header("Location: ../index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,7 +34,7 @@
                 <div class="user-avatar">
                     <img src="../assets/img/perfil.jpg" alt="Avatar">
                 </div>
-                <h2 class="user-name">Ing. Roberto Gomez</h2>
+                 <h2 class="user-name">Bienvenido, <?php echo $_SESSION['username']; ?> (<?php echo $_SESSION['rol']; ?>)</h2>
                 <p class="user-degree"><small>Division :</small>Ingeniería en sistemas computacionales</p>
             </div>
             

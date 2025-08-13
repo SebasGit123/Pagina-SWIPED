@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=	, initial-scale=1.0">
 	<title>Sistema Integral ISC Docentes || TESCI</title>
- <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <link rel="stylesheet" href="assets/css/bootstrap/style.css">
+  <link rel="stylesheet" href="css/style.css">
+
  
 </head>
 
@@ -17,7 +18,10 @@
     .form-container { max-width: 400px; margin: auto; margin-top: 100px; }
   </style>
 <body>  
+
+
   <?php session_start(); ?>
+
 <body>
   <div class="form-container">
     <h3 class="text-center mb-3">Inicio de Sesión</h3>
@@ -44,7 +48,7 @@
       </div>
       <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
     </form>
-    
+
   </div>
 
 
@@ -55,10 +59,8 @@
 
   <!-- jQuery -->
 
-<script src="/assets/js/jquery.min.js"></script> 
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
-<script src="/assets/js/tus-scripts.js"></script> 
-
+  <script src="assets/js/bootstrap.min.js"></script> 
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 
 
 </body>

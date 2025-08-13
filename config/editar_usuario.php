@@ -1,64 +1,58 @@
 <?php
 require_once 'conexion.php';
 
-$sql = "SELECT id, nameD, username, email, rol, password FROM registrodocente";
-$busqueda = '';
-$params = [];
-$types = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Sanitiza y valida los datos recibidos del formulario.
+    $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
+    $nombre = trim($_POST['nameD']);
+    $usuario = trim($_POST['username']);
+    $correo = trim($_POST['email']);
+    $rol = trim($_POST['rol']);
+    $nueva_contrasena = $_POST['password'] ?? '';
 
-if (isset($_POST['busqueda']) && !empty($_POST['busqueda'])) {
-    $busqueda = "%" . trim($_POST['busqueda']) . "%";
-    $sql .= " WHERE nameD LIKE ? OR username LIKE ? OR email LIKE ?";
-    $params = array_fill(0, 3, $busqueda);
-    $types = "sss";
-}
-
-$stmt = $conexion->prepare($sql);
-if ($stmt === false) {
-    die("Error en la preparación de la consulta: " . $conexion->error);
-}
-
-if (!empty($params)) {
-    $stmt->bind_param($types, ...$params);
-}
-
-$stmt->execute();
-$resultado = $stmt->get_result();
-
-function getBadgeClass($rol) {
-    switch ($rol) {
-        case 'jefatura': return 'bg-primary';
-        case 'docente': return 'bg-success';
-        case 'academia': return 'bg-warning text-dark';
-        default: return 'bg-secondary';
+    // Si algún dato requerido falta, redirige con un error.
+    if (!$id || empty($nombre) || empty($usuario) || empty($correo) || empty($rol)) {
+        header("Location: ../jefatura/pruebas.php?error=Datos incompletos o inválidos");
+        exit();
     }
-}
 
-if ($resultado && $resultado->num_rows > 0) {
-    while($row = $resultado->fetch_assoc()) {
-        echo '<tr>';
-        echo '<td>'.htmlspecialchars($row['nameD']).'</td>';
-        echo '<td>'.htmlspecialchars($row['username']).'</td>';
-        echo '<td>'.htmlspecialchars($row['email']).'</td>';
-        echo '<td><span class="badge '.getBadgeClass($row['rol']).'">'.htmlspecialchars(ucfirst($row['rol'])).'</span></td>';
-        echo '<td>'.substr($row['password'], 0, 10).'*****</td>';
-        echo '<td class="text-nowrap">';
-        echo '<button class="css-button-rounded--blue me-2" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="cargarDatosEdicion('.htmlspecialchars($row['id']).')">
-                <i class="fas fa-edit"></i> Editar
-              </button>';
-        echo '<form action="eliminar_usuario.php" method="POST" onsubmit="return confirm(\'¿Eliminar este usuario?\')" class="d-inline">
-                <input type="hidden" name="id" value="'.htmlspecialchars($row['id']).'">
-                <button type="submit" class="css-button-rounded--red">
-                  <i class="fas fa-trash-alt"></i> Eliminar
-                </button>
-              </form>';
-        echo '</td>';
-        echo '</tr>';
+    // Prepara una consulta para verificar si el nuevo nombre de usuario o correo ya existe,
+    // excluyendo al usuario que estamos editando.
+    $stmt_check = $conexion->prepare("SELECT id FROM usuarios_db WHERE (username = ? OR email = ?) AND id != ?");
+    $stmt_check->bind_param("ssi", $usuario, $correo, $id);
+    $stmt_check->execute();
+    
+    // Si la consulta devuelve resultados, significa que el usuario o correo ya existen.
+    if ($stmt_check->get_result()->num_rows > 0) {
+        header("Location: ../jefatura/pruebas.php?error=Usuario o correo ya existen");
+        exit();
     }
+    $stmt_check->close();
+
+    // Si hay una nueva contraseña, la hashea y actualiza todos los campos.
+    if (!empty($nueva_contrasena)) {
+        $hashed_password = password_hash($nueva_contrasena, PASSWORD_DEFAULT);
+        $stmt = $conexion->prepare("UPDATE usuarios_db SET nameD = ?, username = ?, email = ?, rol = ?, password = ? WHERE id = ?");
+        $stmt->bind_param("sssssi", $nombre, $usuario, $correo, $rol, $hashed_password, $id);
+    } else {
+        // Si no hay nueva contraseña, actualiza solo los campos restantes.
+        $stmt = $conexion->prepare("UPDATE usuarios_db SET nameD = ?, username = ?, email = ?, rol = ? WHERE id = ?");
+        $stmt->bind_param("ssssi", $nombre, $usuario, $correo, $rol, $id);
+    }
+
+    // Ejecuta la consulta de actualización.
+    if ($stmt->execute()) {
+        $mensaje = $stmt->affected_rows > 0 ? "success=Usuario actualizado" : "info=No hubo cambios";
+        header("Location: ../jefatura/pruebas.php?$mensaje");
+    } else {
+        header("Location: ../jefatura/pruebas.php?error=Error al actualizar");
+    }
+    
+    $stmt->close();
+    $conexion->close();
 } else {
-    echo '<tr><td colspan="6" class="text-center py-4">No se encontraron usuarios</td></tr>';
+    // Si la solicitud no es POST, redirige al usuario.
+    header("Location: ../jefatura/pruebas.php");
 }
-
-$stmt->close();
-$conexion->close();
+exit();
 ?>

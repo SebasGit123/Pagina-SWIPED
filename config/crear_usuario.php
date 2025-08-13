@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Verificar usuario existente
-    $stmt_check = $conexion->prepare("SELECT id FROM registrodocente WHERE username = ? OR email = ?");
+    $stmt_check = $conexion->prepare("SELECT id FROM usuarios_db WHERE username = ? OR email = ?");
     $stmt_check->bind_param("ss", $usuario, $correo);
     $stmt_check->execute();
     $stmt_check->store_result();
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Insertar nuevo usuario
     $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
     
-    $stmt = $conexion->prepare("INSERT INTO registrodocente (nameD, username, email, password, rol) VALUES (?, ?, ?, ?, ?)");
+    $stmt = $conexion->prepare("INSERT INTO usuarios_db (nameD, username, email, password, rol) VALUES (?, ?, ?, ?, ?)");
     $stmt->bind_param("sssss", $nombre, $usuario, $correo, $hashed_password, $rol);
 
     if ($stmt->execute()) {
