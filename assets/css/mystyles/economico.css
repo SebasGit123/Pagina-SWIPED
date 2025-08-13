@@ -47,7 +47,7 @@ body {
   color: var(--Negro, #000);
   transition: color 0.2s;
 }
-
+  
 .nav-link:hover {
   color: #ddd;
 }
@@ -60,21 +60,7 @@ body {
 .offcanvas {
   background-color: var(--Fondo);
 }
-.sidebar {
-  width: 250px;
-  position: fixed;
-  top: 56px; /* ajusta según altura del navbar */
-  left: 0;
-  height: 100%;
-  padding-top: 1rem;
-  z-index: 1000;
-  overflow-y: auto;
-}
 
-.main-content {
-  margin-left: 250px; /* igual que el ancho de la sidebar */
-  padding: 2rem;
-}
 .custom-btn-color {
   background-color: var(--Fondo);
   color: white;
@@ -105,7 +91,21 @@ body {
   padding: 0.5rem 1rem;
   margin: 0 0.5rem;
 }
+.sidebar {
+  width: 250px;
+  position: fixed;
+  top: 56px; /* ajusta según altura del navbar */
+  left: 0;
+  height: 100%;
+  padding-top: 1rem;
+  z-index: 1000;
+  overflow-y: auto;
+}
 
+.main-content {
+  margin-left: 250px; /* igual que el ancho de la sidebar */
+  padding: 2rem;
+}
 .table {
   margin-bottom: 0;
 }
@@ -126,21 +126,6 @@ h2 {
   font-weight: 600;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--Fondo);
-}
-.sidebar {
-  width: 250px;
-  position: fixed;
-  top: 56px; /* ajusta según altura del navbar */
-  left: 0;
-  height: 100%;
-  padding-top: 1rem;
-  z-index: 1000;
-  overflow-y: auto;
-}
-
-.main-content {
-  margin-left: 250px; /* igual que el ancho de la sidebar */
-  padding: 2rem;
 }
 
 /* Responsive adjustments */
@@ -165,6 +150,7 @@ h2 {
   text-align: center;          
   margin-bottom: 20px;         
 }
+
 .user-info .avatar {
   display: block;              
   margin: 0 auto;              
@@ -173,6 +159,7 @@ h2 {
   border-radius: 50%;          
   object-fit: cover;            
 }
+
 .username {
   margin-top: 10px;
   font-weight: bold;
