@@ -4,12 +4,15 @@
   --Blanco: #fff;
 }
 
+/* ======= ESTILOS GENERALES ======= */
 body {
   background-color: #f1f2f6;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding-top: 4rem;
 }
+
+/* ======= NAVBAR ======= */
 .logoZ {
   width: 3rem;
   height: 3rem;
@@ -41,21 +44,24 @@ body {
 .nav-link {
   font-size: 1rem;
   font-weight: 500;
-  color: #000000; /* blanco dentro del offcanvas oscuro */
+  color: #000;
 }
 
 .nav-link:hover {
-  color: #ddd; /* más claro al pasar cursor */
+  color: #ddd;
 }
+
 .offcanvas {
-  background-color: #213555; /* mismo color que la navbar, opcional */
+  background-color: #213555;
 }
-/* Título animado */
+
+/* ======= TÍTULO ANIMADO ======= */
 .hover-container {
   display: flex;
   justify-content: center;
   margin: 40px auto;
 }
+
 .explosive-text {
   display: inline-block;
   overflow: hidden;
@@ -69,17 +75,22 @@ body {
   transition: transform 0.3s ease;
   position: relative;
 }
+
 .explosive-text:hover {
   transform: scale(1.1);
 }
+
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
 }
+
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: #213555; }
 }
+
+/* ======= PERFIL USUARIO ======= */
 .user-info {
   text-align: center;          
   margin-bottom: 20px;         
@@ -100,13 +111,18 @@ body {
   font-size: 1rem;
   color: #000;
 }
-/* Flip Card */
+
+/* ======= FLIP CARDS ======= */
 .flip-card {
   background-color: transparent;
   width: 280px;
   height: 400px;
   perspective: 1200px;
+  display: flex;
+  position: relative;
+  z-index: 10;
 }
+
 .flip-card-inner {
   position: relative;
   width: 100%;
@@ -114,9 +130,11 @@ body {
   transition: transform 0.8s ease;
   transform-style: preserve-3d;
 }
+
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
+
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -127,6 +145,7 @@ body {
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+
 .flip-card-front img {
   width: 100%;
   height: 100%;
@@ -144,16 +163,21 @@ body {
   padding: 20px;
   text-align: center;
 }
+
 .flip-card-back h4 {
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
+
 .flip-card-back p {
   font-size: 0.9rem;
 }
+
 .btn-learn {
   margin-top: 15px;
 }
+
+/* ======= CONTENEDORES DE TARJETAS ======= */
 .card-group-wrapper {
   display: flex;
   justify-content: center;
@@ -161,39 +185,62 @@ body {
   padding: 20px;
   flex-wrap: wrap;
 }
-.carousel-control-prev,
-.carousel-control-next {
-  top: 50%;
-  transform: translateY(-50%);
+
+.cards-container {
+  flex: 1;
+  padding: 20px;
+  margin-left: 250px; /* deja espacio para el sidebar */
 }
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #000E88;
-  border-radius: 50%;
-  padding: 15px;
+
+/* ======= GRID RESPONSIVO ======= */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  overflow: visible; /* 🔹 Para que no se corte el efecto */
 }
-@media (max-width: 768px) {
-  .card-group-wrapper {
-    flex-direction: column;
-    align-items: center;
+
+.cards-grid .flip-card {
+  width: 100%;
+  max-width: 280px;
+}
+
+@media (max-width: 992px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
-.main-content {
-display: flex;
-margin-top: 4rem;
+
+@media (max-width: 576px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
+
+/* ======= SIDEBAR ======= */
 .sidebar {
-width: 250px;
-background-color: #f8f9fa;
-padding-top: 20px;
-border-right: 1px solid #ddd;
+  width: 250px;
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+  min-height: 100vh;
+  padding-top: 80px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
 }
+
+/* ======= MODAL ======= */
+.modal {
+  z-index: 2000 !important;
+}
+
+.modal-backdrop {
+  z-index: 1999 !important;
+}
+
+/* ======= TÍTULO CENTRAL ======= */
 .titulo-central {
   margin-top: 5rem;
 }
-.carousel-container {
-flex: 1;
-padding: 20px;
-}
-
-
