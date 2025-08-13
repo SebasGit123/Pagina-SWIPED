@@ -148,7 +148,6 @@ h2 {
   text-align: center;          
   margin-bottom: 20px;         
 }
-
 .user-info .avatar {
   display: block;              
   margin: 0 auto;              
@@ -157,7 +156,6 @@ h2 {
   border-radius: 50%;          
   object-fit: cover;            
 }
-
 .username {
   margin-top: 10px;
   font-weight: bold;
