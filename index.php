@@ -7,23 +7,40 @@
 	<link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="assets/css/mystyles/loginRoles.css">
+  <link rel="stylesheet" href="assets/css/mystyles/global.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
  
 </head>
 
-
-<header>
-<style>
-    body { background-color: #f8f9fa; }
-    .form-container { max-width: 400px; margin: auto; margin-top: 100px; }
-  </style>
-<body>  
-
-
+<body class="bg-micolor">
   <?php session_start(); ?>
 
-<body>
-  <div class="form-container">
+
+<header class="navbar navbar-expand-lg navbar-dark fixed-top encabezado navi">
+  <div class="container-fluid">
+    <div class="d-flex me-auto">
+      <a class="navbar-brand" href="#">
+        <img src="assets/img/Logo.png" alt="Logotipo" height="30" class="logoZ">
+      </a>
+    </div>
+
+    <div class="header-content">
+      <h1 class="TESCI">Sistema Integral ISC</h1>
+    </div>
+
+    <div class="ms-auto"></div>
+  </div> 
+</header>
+
+
+<div class="container mt-1 pt-3">
+  <div class="form-container formLogin">
     <h3 class="text-center mb-3">Inicio de Sesión</h3>
     <?php if (isset($_SESSION['error'])): ?>
       <div class="alert alert-danger"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></div>
@@ -46,13 +63,14 @@
           <option value="academia">Academia</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
+      <button type="submit" class="css-button-rounded--blue w-100">Iniciar sesión</button>
     </form>
 
   </div>
 
+<div></div>
 
-
+</div>
 
 
 

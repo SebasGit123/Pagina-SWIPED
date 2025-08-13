@@ -29,9 +29,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insertar nuevo usuario
     $hashed_password = password_hash($contrasena, PASSWORD_DEFAULT);
-    
-    $stmt = $conexion->prepare("INSERT INTO usuarios_db (nameD, username, email, password, rol) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("sssss", $nombre, $usuario, $correo, $hashed_password, $rol);
+    // ...
+$division = $_POST['division']; // Obtener el valor del nuevo campo
+// ...
+$stmt = $conexion->prepare("INSERT INTO usuarios_db (nameD, username, email, password, rol, division) VALUES (?, ?, ?, ?, ?, ?)");
+$stmt->bind_param("ssssss", $nombre, $usuario, $correo, $hashed_password, $rol, $division);
+// ...
 
     if ($stmt->execute()) {
         header("Location: ../jefatura/pruebas.php?success=Usuario creado exitosamente");

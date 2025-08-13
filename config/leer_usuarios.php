@@ -2,7 +2,7 @@
 require_once 'conexion.php';
 
 // Consulta de usuarios
-$sql = "SELECT id, nameD, username, email, rol, password FROM usuarios_db";
+$sql = "SELECT id, nameD, username, email, rol, division, password FROM usuarios_db";
 $resultado = $conexion->query($sql);
 
 if ($resultado && $resultado->num_rows > 0) {
@@ -11,8 +11,9 @@ if ($resultado && $resultado->num_rows > 0) {
         echo "<td>" . htmlspecialchars($fila['nameD']) . "</td>";
         echo "<td>" . htmlspecialchars($fila['username']) . "</td>";
         echo "<td>" . htmlspecialchars($fila['email']) . "</td>";
-        echo "<td>" . htmlspecialchars($fila['rol']) . "</td>";
-        echo "<td class='password-cell'><i class='fas fa-lock'></i> **********</td>";
+       echo "<td>" . htmlspecialchars($fila['rol']) . "</td>";
+       echo "<td>" . htmlspecialchars($fila['division']) . "</td>"; // Nueva columna para la división
+       echo "<td class='password-cell'><i class='fas fa-lock'></i> **********</td>";
 
         echo "<td class='text-center actions-cell'>";
         echo "<button type='button' class='btn btn-primary btn-sm me-1' onclick='cargarDatosEdicion({$fila['id']})' data-bs-toggle='modal' data-bs-target='#modalEditar'>";
