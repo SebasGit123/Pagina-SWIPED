@@ -146,3 +146,23 @@ h2 {
 .gap-2 {
   gap: 0.5rem;
 }
+.user-info {
+  text-align: center;          
+  margin-bottom: 20px;         
+}
+
+.user-info .avatar {
+  display: block;              
+  margin: 0 auto;              
+  width: 80px;                  
+  height: 80px;
+  border-radius: 50%;          
+  object-fit: cover;            
+}
+
+.username {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+}
