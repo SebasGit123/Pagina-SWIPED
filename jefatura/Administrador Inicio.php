@@ -1,3 +1,10 @@
+ <?php
+session_start();
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'jefatura') {
+    header("Location: ../index.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,10 +28,11 @@
     <div class="sidebar">
       <div class="user-info">
   <img src="https://i.pravatar.cc/200" alt="Usuario" class="avatar">
+ <h2 class="user-name">Bienvenido, <?php echo $_SESSION['username']; ?> (<?php echo $_SESSION['rol']; ?>)</h2>
     </div>
       <ul class="nav flex-column text-primary">
         <li class="nav-item">
-      <a class="nav-link" href="Administrador Inicio.html">
+      <a class="nav-link" href="Administrador_Inicio.html">
         <i class="fa-solid fa-book-open"></i> Generar Reportes
       </a>
         </li>
@@ -53,7 +61,7 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="../includes/logout.php">
                <i class="fa-solid fa-user-lock"></i> Cerrar sesión
               </a>
             </li>
@@ -63,9 +71,7 @@
     </div>
     <!-- Carrusel -->
     <div class="carousel-container">
-      <div class="titulo-central text-center">
-     <h1 class="explosive-text">Bienvenida Mtra. Rocío Ortega Jiménez</h1>
-    </div>
+   
       <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <!-- Slide 1 -->
