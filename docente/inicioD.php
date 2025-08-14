@@ -46,7 +46,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'docente') {
              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
   Materias asignadas</button>
               
-            <button class="css-button-rounded--red espaciado" onclick="location.href=''">
+            <button class="css-button-rounded--red espaciado" onclick="location.href='../includes/logout.php'">
                 <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
             </button>
             </div>
