@@ -90,8 +90,7 @@
     </ul>
   </li>
 </ul>
-          </li>
-        </ul>
+      
       </div>
     </nav>
 
@@ -123,6 +122,7 @@
                 <th>Usuario</th>
                 <th>Correo</th>
                 <th>Rol</th>
+                 <th>División</th>
                 <th>Contraseña (encriptada)</th>
                 <th>Acciones</th>
               </tr>
@@ -165,14 +165,29 @@
             <small class="text-muted">El correo se formará automáticamente como: usuario@cuautitlan.tecnm.mx</small>
           </div>
           <div class="mb-3">
-            <label class="form-label">Rol del usuario</label>
-            <select name="rol" class="form-select" required>
-              <option value="" selected disabled>Seleccione un rol</option>
-              <option value="jefatura">Jefatura</option>
-              <option value="docente">Docente</option>
-              <option value="academia">Academia</option>
-            </select>
-          </div>
+    <label class="form-label">Rol del usuario</label>
+    <select name="rol" class="form-select" required>
+      <option value="" selected disabled>Seleccione un rol</option>
+      <option value="jefatura">Jefatura</option>
+      <option value="docente">Docente</option>
+      <option value="academia">Academia</option>
+    </select>
+</div>
+<div class="mb-3">
+    <label class="form-label">División</label>
+    <select name="division" class="form-select" required>
+        <option value="" selected disabled>Seleccione una división</option>
+        <option value="División de Ingeniería Industrial">División de Ingeniería Industrial</option>
+        <option value="División de Ingeniería en Sistemas Computacionales">División de Ingeniería en Sistemas Computacionales</option>
+        <option value="División de Ingeniería en Tecnologías de la Información y Comunicaciones">División de Ingeniería en Tecnologías de la Información y Comunicaciones</option>
+        <option value="División de Contaduría Pública">División de Contaduría Pública</option>
+        <option value="División de Ingeniería Electrónica">División de Ingeniería Electrónica</option>
+        <option value="División de Ingeniería en Gestión Empresarial">División de Ingeniería en Gestión Empresarial</option>
+        <option value="División de Ingeniería en Logística">División de Ingeniería en Logística</option>
+        <option value="División de Ingeniería en Administración">División de Ingeniería en Administración</option>
+        <option value="División de Ingeniería Mecatrónica">División de Ingeniería Mecatrónica</option>
+    </select>
+</div>
           <div class="mb-3">
             <label class="form-label">Contraseña</label>
             <input type="password" name="password" class="form-control" required>
@@ -220,43 +235,62 @@
 function cargarDatosEdicion(id) {
   fetch(`obtener_usuario.php?id=${id}`)
     .then(response => response.json())
-    .then(data => {
-      // Extraer el prefijo del correo (eliminando @cuautitlan.tecnm.mx)
-      const emailPrefix = data.email.replace('@cuautitlan.tecnm.mx', '');
-      
-      const form = `
+    // Dentro de la función cargarDatosEdicion(id)
+.then(data => {
+    const emailPrefix = data.email.replace('@cuautitlan.tecnm.mx', '');
+    
+    // ... tu código existente para generar el formulario HTML ...
+
+    // Aquí se agrega el nuevo campo de "División"
+    const formHTML = `
         <input type="hidden" name="id" value="${data.id}">
         <div class="mb-3">
-          <label class="form-label">Nombre del docente</label>
-          <input type="text" name="nameD" class="form-control" value="${data.nameD}" required>
+            <label class="form-label">Nombre completo</label>
+            <input type="text" name="nameD" class="form-control" value="${data.nameD}" required>
         </div>
         <div class="mb-3">
-          <label class="form-label">Nombre de usuario</label>
-          <input type="text" name="username" class="form-control" value="${data.username}" required>
+            <label class="form-label">Usuario</label>
+            <input type="text" name="username" class="form-control" value="${data.username}" required>
         </div>
         <div class="mb-3">
-          <label class="form-label">Correo institucional</label>
-          <div class="input-group">
-            <input type="text" name="email_prefix" class="form-control" value="${emailPrefix}" required>
-            <span class="input-group-text">@cuautitlan.tecnm.mx</span>
-            <input type="hidden" name="email" id="emailCompleteEdit" value="${data.email}">
-          </div>
+            <label class="form-label">Correo</label>
+            <div class="input-group">
+                <input type="text" name="email_prefix" class="form-control" value="${emailPrefix}" required>
+                <span class="input-group-text">@cuautitlan.tecnm.mx</span>
+                <input type="hidden" name="email" id="emailCompleteEdit">
+            </div>
         </div>
         <div class="mb-3">
-          <label class="form-label">Rol del usuario</label>
-          <select name="rol" class="form-select" required>
-            <option value="jefatura" ${data.rol === 'jefatura' ? 'selected' : ''}>Jefatura</option>
-            <option value="docente" ${data.rol === 'docente' ? 'selected' : ''}>Docente</option>
-            <option value="academia" ${data.rol === 'academia' ? 'selected' : ''}>Academia</option>
-          </select>
+            <label class="form-label">Rol</label>
+            <select name="rol" class="form-select" required>
+                <option value="jefatura" ${data.rol === 'jefatura' ? 'selected' : ''}>Jefatura</option>
+                <option value="docente" ${data.rol === 'docente' ? 'selected' : ''}>Docente</option>
+                <option value="academia" ${data.rol === 'academia' ? 'selected' : ''}>Academia</option>
+            </select>
         </div>
         <div class="mb-3">
-          <label class="form-label">Nueva Contraseña (dejar en blanco para no cambiar)</label>
-          <input type="password" name="password" class="form-control" placeholder="••••••••">
+            <label class="form-label">División</label>
+            <select name="division" class="form-select" required>
+                <option value="División de Ingeniería Industrial" ${data.division === 'División de Ingeniería Industrial' ? 'selected' : ''}>División de Ingeniería Industrial</option>
+                <option value="División de Ingeniería en Sistemas Computacionales" ${data.division === 'División de Ingeniería en Sistemas Computacionales' ? 'selected' : ''}>División de Ingeniería en Sistemas Computacionales</option>
+                <option value="División de Ingeniería en Tecnologías de la Información y Comunicaciones" ${data.division === 'División de Ingeniería en Tecnologías de la Información y Comunicaciones' ? 'selected' : ''}>División de Ingeniería en Tecnologías de la Información y Comunicaciones</option>
+                <option value="División de Contaduría Pública" ${data.division === 'División de Contaduría Pública' ? 'selected' : ''}>División de Contaduría Pública</option>
+                <option value="División de Ingeniería Electrónica" ${data.division === 'División de Ingeniería Electrónica' ? 'selected' : ''}>División de Ingeniería Electrónica</option>
+                <option value="División de Ingeniería en Gestión Empresarial" ${data.division === 'División de Ingeniería en Gestión Empresarial' ? 'selected' : ''}>División de Ingeniería en Gestión Empresarial</option>
+                <option value="División de Ingeniería en Logística" ${data.division === 'División de Ingeniería en Logística' ? 'selected' : ''}>División de Ingeniería en Logística</option>
+                <option value="División de Ingeniería en Administración" ${data.division === 'División de Ingeniería en Administración' ? 'selected' : ''}>División de Ingeniería en Administración</option>
+                <option value="División de Ingeniería Mecatrónica" ${data.division === 'División de Ingeniería Mecatrónica' ? 'selected' : ''}>División de Ingeniería Mecatrónica</option>
+            </select>
         </div>
-      `;
-      document.getElementById('modalEditarBody').innerHTML = form;
-    });
+        <div class="mb-3">
+            <label class="form-label">Nueva contraseña</label>
+            <input type="password" name="password" class="form-control" placeholder="Dejar vacío para no cambiar">
+            <div class="form-text">Mínimo 8 caracteres</div>
+        </div>
+    `;
+    document.getElementById('modalEditarBody').innerHTML = formHTML;
+    // ... el resto de la función es el mismo ...
+});
 }
 
 // Función para el sidebar

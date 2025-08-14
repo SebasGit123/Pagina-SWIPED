@@ -10,7 +10,8 @@ if (isset($_GET['id'])) {
     // Si el ID es válido...
     if ($id) {
         // Prepara la consulta SQL para evitar inyecciones.
-        $stmt = $conexion->prepare("SELECT id, nameD, username, email, rol FROM usuarios_db WHERE id = ?");
+       $stmt = $conexion->prepare("SELECT id, nameD, username, email, rol, division FROM usuarios_db WHERE id = ?");
+
         $stmt->bind_param("i", $id);
         $stmt->execute();
         $resultado = $stmt->get_result();

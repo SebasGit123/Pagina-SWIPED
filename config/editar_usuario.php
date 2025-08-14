@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = trim($_POST['username']);
     $correo = trim($_POST['email']);
     $rol = trim($_POST['rol']);
+    $division = trim($_POST['division']); // Obtener el valor del nuevo campo
     $nueva_contrasena = $_POST['password'] ?? '';
 
     // Si algún dato requerido falta, redirige con un error.
@@ -32,12 +33,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Si hay una nueva contraseña, la hashea y actualiza todos los campos.
     if (!empty($nueva_contrasena)) {
         $hashed_password = password_hash($nueva_contrasena, PASSWORD_DEFAULT);
-        $stmt = $conexion->prepare("UPDATE usuarios_db SET nameD = ?, username = ?, email = ?, rol = ?, password = ? WHERE id = ?");
-        $stmt->bind_param("sssssi", $nombre, $usuario, $correo, $rol, $hashed_password, $id);
+
+$stmt = $conexion->prepare("UPDATE usuarios_db SET nameD = ?, username = ?, email = ?, rol = ?, division = ?, password = ? WHERE id = ?");
+$stmt->bind_param("ssssssi", $nombre, $usuario, $correo, $rol, $division, $hashed_password, $id);
+
     } else {
         // Si no hay nueva contraseña, actualiza solo los campos restantes.
-        $stmt = $conexion->prepare("UPDATE usuarios_db SET nameD = ?, username = ?, email = ?, rol = ? WHERE id = ?");
-        $stmt->bind_param("ssssi", $nombre, $usuario, $correo, $rol, $id);
+      
+$stmt = $conexion->prepare("UPDATE usuarios_db SET nameD = ?, username = ?, email = ?, rol = ?, division = ? WHERE id = ?");
+$stmt->bind_param("sssssi", $nombre, $usuario, $correo, $rol, $division, $id);
+
     }
 
     // Ejecuta la consulta de actualización.
