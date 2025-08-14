@@ -16,8 +16,7 @@ body {
     padding-top: 7%;
     background: linear-gradient(
         to bottom, rgba(33, 53, 85,0.5), 
-        rgba(33, 53, 85,0.3),
-        rgba(33, 53, 85,0.1));;
+        rgba(33, 53, 85,0.3))!important;
 }
 
 
