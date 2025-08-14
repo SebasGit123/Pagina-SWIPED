@@ -3,16 +3,12 @@
   --Fondo: #213555;
   --Blanco: #fff;
 }
-
-/* ======= ESTILOS GENERALES ======= */
 body {
   background-color: #f1f2f6;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding-top: 4rem;
 }
-
-/* ======= NAVBAR ======= */
 .logoZ {
   width: 3rem;
   height: 3rem;
@@ -54,8 +50,6 @@ body {
 .offcanvas {
   background-color: #213555;
 }
-
-/* ======= TÍTULO ANIMADO ======= */
 .hover-container {
   display: flex;
   justify-content: center;
@@ -90,7 +84,6 @@ body {
   50% { border-color: #213555; }
 }
 
-/* ======= PERFIL USUARIO ======= */
 .user-info {
   text-align: center;          
   margin-bottom: 20px;         
