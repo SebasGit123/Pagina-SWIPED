@@ -42,13 +42,13 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'jefatura') {
         </a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">
           <i class="fa-solid fa-list-ul"></i>
           <span class="ms-1">Más opciones</span>
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="#">
+            <a class="dropdown-item" href="../includes/logout.php">
               <i class="fa-solid fa-user-lock"></i> Cerrar sesión
             </a>
           </li>
