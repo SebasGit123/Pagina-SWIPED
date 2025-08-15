@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  padding-top: 4rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+  --Titulo: "Quicksand", sans-serif;
+  --Fondo: #213555;
+  --Blanco: #fff;
+  --Borde: #dee2e6;
+  --Sombra: rgba(0, 0, 0, 0.1);
+}
+
+.logoZ {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+.navi {
+  background-color: var(--Fondo);
+  box-shadow: 0 2px 4px var(--Sombra);
+}
+
+.TESCI {
+  color: var(--Blanco);
+  font-family: var(--Titulo);
+  font-size: 1.8rem;
+  margin-left: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-toggler {
+  border: none;
+  margin-right: 1rem;
+}
+
+.offcanvas-title {
+  font-family: var(--Titulo);
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--Negro, #000);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #ddd;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.offcanvas {
+  background-color: var(--Fondo);
+}
+.sidebar {
+  width: 250px;              /* ancho fijo */
+  height: 100vh;             /* ocupa toda la altura */
+  position: fixed;           /* se queda fija */
+  top: 56px;                 /* espacio para la navbar */
+  left: 0;
+  background-color: #f8f9fa; /* color claro */
+  border-right: 2px solid #ccc; /* división visual */
+  padding: 20px 10px;
+}
+
+/* Contenido principal */
+.main-content {
+  margin-left: 250px;   /* deja espacio a la sidebar */
+  padding: 20px;
+}
+.user-info {
+  text-align: center;          
+  margin-bottom: 20px;         
+}
+.user-info .avatar {
+  display: block;              
+  margin: 0 auto;              
+  width: 80px;                  
+  height: 80px;
+  border-radius: 50%;          
+  object-fit: cover;            
+}
+
+.username {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+}

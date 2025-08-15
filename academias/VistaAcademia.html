@@ -1,181 +1,110 @@
-<!DOCTYPE html>
+ <?php
+session_start();
+if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'academia') {
+    header("Location: ../index.php");
+    exit;
+}
+?>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vista de Academia</title>
-<link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css">
-
-  <link rel="stylesheet" href="../assets/css/mystyles/VistaAcademia.css">
+  <title>Inicio Academia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../assets/css/bootstrap/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../assets/css/mystyles/Vista_academia.css"/>
+  <link rel="stylesheet" href="../assets/Fontawesome/css/all.min.css" />
 </head>
 <body>
+ <!-- Navbar -->
   <nav class="navbar navbar-dark navi fixed-top">
     <div class="container-fluid justify-content-center">
       <span class="TESCI">ISC || TESCI</span>
     </div>
   </nav>
-  <!-- Contenido principal con sidebar y carrusel -->
   <div class="main-content">
     <!-- Sidebar -->
     <div class="sidebar">
-      <img src="img/ArchivosDocen.png" alt="Usuario" class="avatar my-3">
-      <ul class="nav flex-column text-primary">
-        <li class="nav-item">
-          <a class="nav-link" href="Administrador Inicio.html">
-            <img src="img/inicio1.png" width="20" height="20"> <span class="ms-1">Inicio</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Ciencias_Inge.html">
-            <img src="img/instru1.png" width="20" height="20"> <span class="ms-1">Ciencias de la Ingeneria</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Ciencias_Basicas.html">
-            <img src="img/docentes1.png" width="20" height="20"> <span class="ms-1">Ciencias Basicas</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="Diseño.html">
-            <img src="img/academia1.png" width="20" height="20"> <span class="ms-1">Diseño de ingeneria</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-            <img src="img/asig1.png" width="20" height="20"> <span class="ms-1">Asignaturas</span>
-          </a>
-        </li>
+      <div class="user-info">
+       <img src="https://i.pravatar.cc/200" alt="Usuario" class="avatar">
+      </div>
+       <ul class="nav flex-column text-primary">
+    <li class="nav-item">
+      <a class="nav-link" href="Administrador Inicio.html">
+        <i class="fas fa-home me-2"></i> Revision de Instrumentaciones
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Ciencias_Inge.html">
+        <i class="fa-solid fa-gears"></i> Repositorio de instrumentaciones
+      </a>
+    </li>
       </ul>
-
       <!-- Submenú -->
       <ul class="nav flex-column text-primary">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            <img src="img/opcion1.png" width="20" height="20">
+            <i class="fa-solid fa-list-ul"></i>
             <span class="ms-1">Más opciones</span>
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" href="#">
-                <img src="img/conf1.png" width="20" height="20"> Configuración
+              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                <i class="fa-solid fa-user-lock"></i> Cerrar sesión
               </a>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
-                <img src="img/cont1.png" width="20" height="20"> Contacto
-              </a>
-            </li>
-            <li>
-              <a class="dropdown-item" href="#">
-                <img src="img/salir1.png" width="20" height="20"> Cerrar sesión
-              </a>
+              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#supportModal">
+               <i class="fa-solid fa-question"></i> Soporte y Ayuda
+             </a>
             </li>
           </ul>
         </li>
       </ul>
     </div>
-      <!-- Carpetas -->
-      <div class="col-md-8 main-content">
-        <div class="d-flex justify-content-between mt-3 mb-3">
-          <input type="text" class="form-control w-25" id="buscarInput" placeholder="Buscar..." onkeyup="filtrarCarpetas()">
-        </div>
+  </div>
 
-        <div id="carpetas-container" class="row">
-          <div class="col-sm-4 folder-container">
-            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Folder" class="folder-icon">
-            <p>Mtro José Luis Camacho Campero</p>
-          </div>
-          <div class="col-sm-4 folder-container">
-            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Folder" class="folder-icon">
-            <p>Prof. Esteban Snachez Escarriola</p>
-          </div>
-          <div class="col-sm-4 folder-container">
-            <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Folder" class="folder-icon">
-            <p>Prof. Elva Bernal Rodriguez</p>
-          </div>
+  <!-- Modal Cerrar Sesión -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="logoutModalLabel">Confirmar cierre de sesión</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
-      </div>
-
-      <!-- Áreas Sidebar -->
-      <div class="col-md-2 sidebar-derecha">
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Programación')">Programación</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Base de Datos')">Base de Datos</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Ingeniería de Software')">Ingeniería de Software</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Redes')">Redes</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Arq de Computadora y SO')">Arq de Computadora y SO</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Seguridad')">Seguridad</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Administración')">Administración</a>
-          <a href="#" class="list-group-item list-group-item-action" onclick="cargarArea('Ciencias Básicas')">Ciencias Básicas</a>
+        <div class="modal-body">
+          ¿Estás seguro de que deseas cerrar sesión?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <!-- Aquí rediriges a logout.php -->
+          <a href="logout.php" class="btn btn-danger">Cerrar sesión</a>
         </div>
       </div>
     </div>
   </div>
-
-  <!-- Botón Eliminar -->
-<a class="dropdown-item btn-danger" href="../includes/logout.php">
-          <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
-        </a>
-
-  <!-- Bootstrap JS -->
+  <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="supportModalLabel">Soporte y Ayuda</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Si tienes problemas con el sistema, contáctanos:</p>
+        <ul>
+          <li><strong>Email:</strong> soporte@tuinstitucion.mx</li>
+          <li><strong>Teléfono:</strong> +52 55 1234 5678</li>
+          <li><strong>Horario:</strong> Lunes a Viernes, 9:00 a 18:00</li>
+        </ul>
+        <p>También puedes consultar el <a href="manual_usuario.pdf" target="_blank">manual de usuario</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Script dinámico -->
-  <script>
-    function confirmarEliminar() {
-      if (confirm('¿Estás seguro que deseas eliminar?')) {
-        alert('Elemento eliminado');
-      }
-    }
-
-    function cargarArea(area) {
-      const carpetas = {
-        'Programación': [
-          'Mtro José Luis Camacho Campero',
-          'Prof. Esteban Snachez Escarriola',
-          'Prof. Elva Bernal Rodriguez'
-        ],
-        'Base de Datos': [
-          'Prof. Alejandro Rafael Ramírez Zavala',
-          'Prof. Pedro Sánchez'
-        ],
-        'Ingeniería de Software': [
-          'Prof. Ana Torres',
-          'Prof. Edith Flores Hernández'
-        ],
-        'Redes': [
-          'Prof. Guillermo González Peñaran',
-          'Prof. Carla Jiménez'
-        ]
-        // Puedes seguir agregando más
-      };
-
-      const contenedor = document.getElementById('carpetas-container');
-      contenedor.innerHTML = '';
-
-      if (carpetas[area]) {
-        carpetas[area].forEach(nombre => {
-          contenedor.innerHTML += `
-            <div class="col-sm-4 folder-container">
-              <img src="https://img.icons8.com/fluency/96/folder-invoices.png" alt="Folder" class="folder-icon">
-              <p>${nombre}</p>
-            </div>
-          `;
-        });
-      } else {
-        contenedor.innerHTML = '<p>No hay carpetas para esta área.</p>';
-      }
-    }
-
-    function filtrarCarpetas() {
-      const input = document.getElementById('buscarInput').value.toLowerCase();
-      const carpetas = document.querySelectorAll('#carpetas-container .folder-container');
-
-      carpetas.forEach(carpeta => {
-        const texto = carpeta.querySelector('p').innerText.toLowerCase();
-        carpeta.style.display = texto.includes(input) ? '' : 'none';
-      });
-    }
-  </script>
 </body>
-</html>
+
