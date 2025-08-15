@@ -15,17 +15,30 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'docente') {
     <link rel="stylesheet" href="css/mystyles/archivos.css">
     <link rel="stylesheet" href="../assets/css/mystyles/global.css">
     <link rel="stylesheet" href="../assets/css/mystyles/archivos.css">
+    <link rel="stylesheet" href="../assets/css/mystyles/pruebas.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark navi">
+<header class="navbar navbar-expand-lg navbar-dark fixed-top encabezado">
   <div class="container-fluid">
-    <img src="../assets/img/logo.png" class="logoZ">
-    <a class="navbar-brand">ISC || TESCI</a>
-  </div>
-</nav>
+    <div class="d-flex me-auto">
+      <button class="navbar-toggler" type="button" id="toggleSidebar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="../assets/img/logo.png" alt="Logotipo" height="30" class="logoZ">
+      </a>
+    </div>
 
+    <div class="header-content">
+      <h1 class="NavTit">Sistema Integral ISC</h1>
+    </div>
+
+    <div class="ms-auto"></div>
+  </div> 
+</header>
+<br>
 <div class="container">
     <div class="main-layout">
         <!-- Panel lateral -->
@@ -160,11 +173,11 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'docente') {
 </div>
 
 <!-- Modal para Materias Asignadas -->
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Materias asignadas</h1>
+        <h1 class="modal-title fs-5 " id="staticBackdropLabel">Materias asignadas</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
