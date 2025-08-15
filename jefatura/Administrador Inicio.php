@@ -31,31 +31,59 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'jefatura') {
       <h2 class="user-name">Bienvenido, <?php echo $_SESSION['username']; ?> (<?php echo $_SESSION['rol']; ?>)</h2>
     </div>
     <ul class="nav flex-column text-primary">
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalGestionDocentes">
-          <i class="fa-solid fa-book-open"></i> Generador de Reportes
-        </a>
-      </li>
-      <li class="nav-item">
+    <li class="nav-item">
         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalPerfil">
           <i class="fa-solid fa-user-gear"></i> Configuración de perfil
         </a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          <i class="fa-solid fa-list-ul"></i>
+          <span class="ms-1">Generador de Reportes</span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalCiencias_Inge">
+              <i class="fa-solid fa-gears"></i> Ciencias de la Ingeneria 
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalBasicas">
+              <i class="fas fa-flask me-2"></i> Ciencias Básicas
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalEconomico_Adminis">
+              <i class="fa-solid fa-chart-line"></i> Economico Administrativo
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalDiseño">
+              <i class="fas fa-drafting-compass me-2"></i> Diseño de Ingeneria
+            </a>
+          </li>
+        </ul>
+        <ul class="nav flex-column text-primary">
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
           <i class="fa-solid fa-list-ul"></i>
           <span class="ms-1">Más opciones</span>
         </a>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="../includes/logout.php">
-              <i class="fa-solid fa-user-lock"></i> Cerrar sesión
-            </a>
-          </li>
+              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                <i class="fa-solid fa-user-lock"></i> Cerrar sesión
+              </a>
+            </li>
+          <li>
+              <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#supportModal">
+               <i class="fa-solid fa-question"></i> Soporte y Ayuda
+             </a>
+            </li>       
         </ul>
-      </li>
-    </ul>
-  </div>
+      </li> 
+      </ul>
+   </div>
   <div class="cards-container">
     <div class="titulo-central text-center">
     </div>
@@ -189,6 +217,129 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'jefatura') {
     </div>
   </div>
 </div>
+<!-- Modal Ciencias de la Ingeniería -->                
+<div class="modal fade" id="modalCiencias_Inge" tabindex="-1" aria-labelledby="modalCienciasIngeLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalCienciasIngeLabel">Generador de Reportes - Ciencias de la Ingeniería</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>Nombre del Docente</th>
+                <th>Asignatura</th>
+                <th>Fecha de Creación</th>
+                <th>Actualizada</th>
+                <th>Aprobada</th>
+                <th>Entregada en Tiempo y Forma</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Diseño de Ingeniería -->
+<div class="modal fade" id="modalDiseño" tabindex="-1" aria-labelledby="modalDiseñoLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalDiseñoLabel">Generador de Reportes - Diseño de Ingeniería</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>Nombre del Docente</th>
+                <th>Asignatura</th>
+                <th>Fecha de Creación</th>
+                <th>Actualizada</th>
+                <th>Aprobada</th>
+                <th>Entregada en Tiempo y Forma</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Económico Administrativo --> 
+<div class="modal fade" id="modalEconomico_Adminis" tabindex="-1" aria-labelledby="modalEconomicoAdminisLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalEconomicoAdminisLabel">Generador de Reportes - Económico Administrativo</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>Nombre del Docente</th>
+                <th>Asignatura</th>
+                <th>Fecha de Creación</th>
+                <th>Actualizada</th>
+                <th>Aprobada</th>
+                <th>Entregada en Tiempo y Forma</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Ciencias Básicas -->
+<div class="modal fade" id="modalBasicas" tabindex="-1" aria-labelledby="modalBasicasLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalBasicasLabel">Generador de Reportes - Ciencias Básicas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-bordered table-hover">
+            <thead class="table-primary">
+              <tr>
+                <th>Nombre del Docente</th>
+                <th>Asignatura</th>
+                <th>Fecha de Creación</th>
+                <th>Actualizada</th>
+                <th>Aprobada</th>
+                <th>Entregada en Tiempo y Forma</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Aquí puedes agregar más filas según sea necesario -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- Modal Configuración de Perfil -->
 <div class="modal fade" id="modalPerfil" tabindex="-1" aria-labelledby="modalPerfilLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -221,6 +372,47 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] !== 'jefatura') {
           </div>
           <button type="submit" class="btn btn-primary">Guardar cambios</button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Cerrar Sesión -->
+  <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title" id="logoutModalLabel">Confirmar cierre de sesión</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          ¿Estás seguro de que deseas cerrar sesión?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <!-- Aquí rediriges a logout.php -->
+          <a href="logout.php" class="btn btn-danger">Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="supportModal" tabindex="-1" aria-labelledby="supportModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title" id="supportModalLabel">Soporte y Ayuda</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Si tienes problemas con el sistema, contáctanos:</p>
+        <ul>
+          <li><strong>Email:</strong> soporte@tuinstitucion.mx</li>
+          <li><strong>Teléfono:</strong> +52 55 1234 5678</li>
+          <li><strong>Horario:</strong> Lunes a Viernes, 9:00 a 18:00</li>
+        </ul>
+        <p>También puedes consultar el <a href="manual_usuario.pdf" target="_blank">manual de usuario</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
       </div>
     </div>
   </div>
